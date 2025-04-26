@@ -1,0 +1,96 @@
+Crud işlemleri(Select, Insert, Delete, Update) =  
+Ado.Net(C# ile veritabanı işlemleri gerçekleştirmek için yaygın olarak kullanılan bir teknolojidir.)
+
+***Select(Listeleme, veri getirme işlemi)
+/*
+sql.Open();
+SqlCommand cmd = new SqlCommand("Select * from TBLKATEGORI", sql);
+SqlDataAdapter da = new SqlDataAdapter(cmd);
+DataTable dt = new DataTable();
+da.Fill(dt);
+dataGridView1.DataSource = dt;
+sql.Close();
+*/
+
+-- Comboxtan veri çekme işlemi(Giriş paneli yapılırken if sorgusu ile yapılır ve form çağrılır)
+/*
+sql.Open();
+SqlCommand cmd = new SqlCommand("select * FROM TBLKATEGORI", sql);
+SqlDataReader dr = cmd.ExecuteReader();
+while (dr.Read())
+{
+    comboBox1.Items.Add(dr["KATEGORIAD"]);
+}
+sql.Close();
+*/
+
+
+***Insert(Ekleme, veri ekleme işlemi)
+/*
+sql.Open();
+SqlCommand cmd = new SqlCommand("insert into TBLKATEGORI (KATEGORIAD) VALUES (@P1)", sql);
+cmd.Parameters.AddWithValue("P1", txKategoriAd.Text);
+cmd.ExecuteNonQuery();
+sql.Close();
+MessageBox.Show("Kategoriler Güncellenmiştir. ", "BİLGİ", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+Listele();
+*/
+
+***Delete(Silme, veri silme işlemi)
+/*
+sql.Open();
+SqlCommand cmd = new SqlCommand("delete from TBLKATEGORI WHERE KATEGORIID=@P1", sql);
+cmd.Parameters.AddWithValue("@P1", txtid.Text);
+cmd.ExecuteNonQuery();
+sql.Close();
+MessageBox.Show("Kategori silinmiştir. ", "BİLGİ", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+Listele();
+*/
+
+Update(Güncelleme, veri güncelleme işlemi)
+/*
+sql.Open();
+SqlCommand sqlCommand = new SqlCommand("update TBLKATEGORI SET KATEGORIAD=@P1 WHERE KATEGORIAID=@P2", sql);
+sqlCommand.Parameters.AddWithValue("@P1", txKategoriAd.Text);
+sqlCommand.ExecuteNonQuery();
+sql.Close();
+MessageBox.Show("Kategori Güncellenmiştir", "BİLGİ", MessageBoxButtons.OK, MessageBoxIcon.Hand);
+Listele();
+*/
+
+Search(Arama işlemi)
+/*
+sql.Open();
+SqlCommand cmd = new SqlCommand("select * FROM TBLKATEGORI WHERE KATEGORIAD=@P1", sql); ;
+cmd.Parameters.AddWithValue("@P1", txKategoriAd.Text);
+SqlDataAdapter da = new SqlDataAdapter(cmd);
+DataTable dt = new DataTable();
+da.Fill(dt);
+dataGridView1.DataSource = dt;
+sql.Close();
+*/
+
+dataGridView1_CellClick( Veri Tablosuna tıklandığında verileri getirme işlemi)
+/*
+txtid.Text = dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString();
+txKategoriAd.Text = dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString();
+*/
+
+Bit Değerindeki Veriyi Getirme
+/*
+ private void radioButton1_CheckedChanged(object sender, EventArgs e)
+ {
+     if (radioButton1.Checked == true)
+     {
+         label8.Text = "True";
+     }
+ }
+
+ private void radioButton2_CheckedChanged(object sender, EventArgs e)
+ {
+     if (radioButton2.Checked == true)
+     {
+         label8.Text = "True";
+     }
+ }
+*/

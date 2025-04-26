@@ -1,0 +1,27 @@
+Ado.Net
+**********
+ADO.NET (ActiveX Data Objects .NET), .NET platformunda veritabanı ile iletişim kurmak için kullanılan bir teknolojidir.
+Microsoft tarafından geliştirilmiştir ve özellikle SQL Server, Oracle, MySQL gibi veritabanlarıyla bağlantı kurmak, veri çekmek, eklemek, güncellemek ve silmek için kullanılır.
+
+🔧 ADO.NET Ne İşe Yarar?
+- Veritabanına bağlanmak
+- Veritabanından veri çekmek
+ - Veritabanına veri eklemek/güncellemek/silmek
+- SQL komutları çalıştırmak
+- Stored Procedure (saklı yordam) kullanmak
+- Disconnected (bağlantısız) veri işlemleri yapmak
+
+🧱 ADO.NET’in Temel Bileşenleri
+Bileşen	                  Açıklama
+SqlConnection	Veritabanına bağlantı sağlar.
+SqlCommand	SQL sorgularını veya prosedürleri çalıştırır.
+SqlDataReader	Verileri bağlantı açıkken satır satır okur (forward-only).
+SqlDataAdapter	Veri alıp DataSet gibi nesnelere aktarır.
+DataSet	                   Bağlantıdan bağımsız, bellekte çalışan veri kümesidir.
+DataTable	DataSet içindeki tabloyu temsil eder.
+
+✅ ADO.NET’in Avantajları
+- Performanslıdır (özellikle SqlDataReader)
+- Hem bağlantılı hem bağlantısız çalışma imkanı sunar.
+- .NET ile tam uyumludur.
+- Güçlü hata yönetimi ve güvenlik desteği sunar.

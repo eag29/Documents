@@ -1,0 +1,33 @@
+CQRS:
+******
+CQRS (Command and Query Responsibility Segregation)
+Komut ve Sorgu Sorumluluğu Ayrımı
+Yazılım mimarisinde bir desen olarak kullanılan bir yaklaşımdır.
+Bu desen, okuma (query) ve yazma (command) işlemlerini birbirinden ayırarak, 
+performans, ölçeklenebilirlik ve güvenlik açısından çeşitli avantajlar sağlar.
+
+QRS’in Temel Mantığı
+Normalde geleneksel CRUD (Create, Read, Update, Delete) uygulamalarında aynı model hem okuma hem de yazma işlemleri için kullanılır. Ancak büyük ve karmaşık sistemlerde bu durum bazı dezavantajlara neden olabilir. CQRS, bu sorunu çözmek için okuma (Query) ve yazma (Command) işlemlerini tamamen ayrı katmanlara ayırır.
+
+📌Read ==> Results
+📌Parametre ==> Queiries(Sistemde herhangi bir değişiklik yapmadan sadece veri getirir.)
+📌Parametreler ==> Commands( Sistemde bir değişiklik yapar (Veri ekleme, güncelleme, silme).)
+📌Crud ==> Handlers
+
+CQRS’in Avantajları
+✅ Performans Artışı: Okuma ve yazma işlemleri için ayrı veri modelleri kullanıldığı için performans artar.
+✅ Ölçeklenebilirlik: Yazma ve okuma işlemleri birbirinden bağımsız ölçeklenebilir.
+✅ Güvenlik ve Yetkilendirme: Okuma ve yazma işlemleri için farklı yetkilendirme politikaları uygulanabilir.
+✅ Esneklik: Farklı veritabanları ve teknolojilerle çalışmak mümkündür (Örneğin, yazma tarafında SQL, okuma tarafında NoSQL kullanılabilir).
+✅ Geliştirilmiş Veri Tutarlılığı: Veri tutarlılığı ve geçmişi izlenebilir (Event Sourcing ile birlikte).
+
+CQRS Kullanım Senaryoları
+CQRS, özellikle aşağıdaki senaryolarda tercih edilir:
+✔ Büyük ölçekli sistemler (e-Ticaret, Bankacılık, Finans)
+✔ Gerçek zamanlı veri işleme ve analitik sistemler
+✔ Yoğun okuma veya yazma yükü olan uygulamalar
+✔ Event Sourcing ile entegre çalışan sistemler
+✔ Mikroservis mimarisi kullanılan projeler
+
+Sonuç
+CQRS, özellikle büyük ve karmaşık sistemlerde performans, ölçeklenebilirlik ve veri tutarlılığı açısından büyük avantajlar sağlar. Ancak, küçük ve basit projelerde gereksiz bir karmaşıklık oluşturabilir. Eğer sisteminizde okuma ve yazma yükleri çok farklı ise ve güçlü bir ölçeklenebilirlik istiyorsanız, CQRS iyi bir tercih olabilir. 🚀

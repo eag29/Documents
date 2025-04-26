@@ -1,0 +1,40 @@
+
+N Tier Architecture(N Katmanlı Mimari) ile Mikroservis Geliştirme:
+***********************************************************
+**// Kargo Mikroservisinin Oluşturulması, Entity, Context Sınıflarının Oluşturulması  **//
+Entit Layer katmanının içerisine entity Core  paketleri yüklenir.
+Class Library olarak katmanlar oluşturulur.
+Entity Layer katmanın içerisinde concrete dosyasının içerisinde entities oluşturulur.
+Dal katmanın içerisinde concrete dosyasının içerisinde Context sınıfı oluşturulur.
+UI katmanın içerisine tools ve design paketleri yüklenir.
+
+**// Vt oluşturma, yansıtma, mig işlemleri **//
+Docker üzerinden sqlservr linux templeate oluşturulur. Oluşturulan localhost numarısı context sınıfındaki yola verilir.
+Mig işlemleri yapılır.
+Oluşturulan localhost numarısı dbeaver üzerinden vt getirilir.
+
+**// Repository Design Pattern  **//
+Dal katmanı içerisinde abstract dosyası oluşturulur. IGenericDall interfacei oluşturulur. Tden referans alır. Crud imzaları atılır. 
+Dal katmanında Abstract dosyası içerisine Her bir entity için Interface oluşturulur referans olarak IGenericDal verilir.
+Repositories dosyası içerisine repositories oluşturulur. IGenericDaldan gelen metotlar context aracılığıyla doldurulur.
+EntityFramework dosyası içerisinde EfEntityAdiDal oluşturulur.
+Referans olarak Generic Repository ve entityin kendisi verilir. Sonrasında  entitye özgü metot eklenebilmesi için IEntityDal verilir.
+
+BusinessLayerda abstract dosyası içerisine IGenericService oluşturulur. Crud imzaları atılır.
+Her bir entity için interface oluşturulur. IGenericService'den referans alır. Entity verilir.
+Concrete dosyası içerisine her bir entity için manager sınıfı oluşturulur. Dal servisi üzerinden referans alır. 
+Dal interfacei ile implement edilen metotlar doldurulur.
+
+Dto katmanında dtos dosyası ve her bir entity için create ve update dtos dosyası oluşturulur. Update tüm değerler getirilir.
+
+Api katmanında apiController oluşturulur. 
+launchSettings tarayıcıdan çalıştırma pasif edilir ve url tek linke düşürülür. appsettings de IdentityServerUrl eklemesi yapılır.
+JwtBerarer paketi eklenir. Program.css üzerinde CargoContext eklenir. İlgili entity ile ilgili scoped eklemeleri yapılır.
+
+**// Cargo Mikroservisinin Token ile Korunması **//
+IdentityServer Config sınıfında gereki eklemeler yapılır.
+Program.cs üzerinden yetkilendirme eklemesi yapılır.
+Controllerda authorize attributesi eklenir.
+
+
+

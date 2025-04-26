@@ -1,0 +1,90 @@
+#region Koleksiyonlar
+
+/*List<T> – Dinamik dizi*/
+
+/*List<string> fruits = new List<string>();
+fruits.Add("Orange");
+fruits.Add("Apple");
+fruits.Add("Strawberry");
+
+foreach (string fruit in fruits)
+{
+    Console.WriteLine(fruit);
+}*/
+
+/*Dictionary<TKey, TValue> – Anahtar-değer çifti*/
+
+/*Dictionary<int, string> students = new Dictionary<int, string>();
+students.Add(1, "Güney");
+students.Add(2, "Ertuğrul");
+Console.WriteLine(students[2]);
+
+foreach (var item in students)
+{
+    Console.WriteLine($"{item.Key} - {item.Value}");
+}*/
+
+/*HashSet < T > – Tekrar eden verileri engeller*/
+
+/*HashSet<string> set = new HashSet<string>();
+set.Add("Setting1");
+set.Add("Setting2");
+set.Add("Setting1");
+
+foreach (string s in set)
+{
+    Console.WriteLine(s);
+}*/
+
+/*Queue < T > – Kuyruk(FIFO)*/
+
+/*Queue<string> queue = new Queue<string>();
+queue.Enqueue("a");
+queue.Enqueue("b");
+
+string first = queue.Dequeue(); //Sadece ilk değeri alır.
+Console.WriteLine(first); */
+
+/*Stack < T > – Yığın(LIFO)*/
+
+/*Stack<string> stack = new Stack<string>();
+stack.Push("a");
+stack.Push("b");
+stack.Push("c");
+
+string lastPop = stack.Pop(); //Son veriyi alır
+Console.WriteLine(lastPop);*/
+
+/*SortedList < TKey, TValue > – Sıralı sözlük*/
+
+/*SortedList<int, string> fruits = new SortedList<int, string>();
+fruits.Add(1,"Orange");
+fruits.Add(2,"Apple");
+fruits.Add(3,"Strawberry");
+
+foreach (var fruit in fruits)
+{
+    Console.WriteLine(fruit);
+}*/
+
+/*ArrayList – Her türden veri tutabilir*/
+
+/*ArrayList fruits = new ArrayList();
+fruits.Add("Orange");
+fruits.Add(13);
+fruits.Add(true);
+
+foreach (var fruit in fruits)
+{
+    Console.WriteLine(fruit);
+}*/
+
+/*Hashtable – Anahtar-değer yapısı (tip güvenliği yok)*/
+
+/*Hashtable hashtable = new Hashtable();
+hashtable.Add("Emir Ali", "29");
+hashtable.Add("İbrahim", "56");
+
+Console.WriteLine(hashtable["Emir Ali"]);*/
+
+#endregion

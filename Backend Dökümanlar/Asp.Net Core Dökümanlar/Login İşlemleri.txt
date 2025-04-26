@@ -1,0 +1,14 @@
+Login İşlemleri:
+***************
+**//  Admin Teması, Admin Layout With Area **//
+ScaffoldingReadMe de yazan değer kopyalanıp program.csye verilir.
+Areas klasörü oluşturulur. Mvc Area oluşturulur.Admin klasörünün içerisinde AdminLayout ve Categori Controller oluşturulur.
+Categori Controller'da [Area("Admin")] attributesi oluşturulur. Oluşturulan kontrollerde view oluşturulur.
+Admin Layout içerisine tema dosyasından tables-basic html içerisindeki değerler verilir.
+
+**// Dto Katmanı ve Kategori Controller Kategorilerin Allow Anonymous ile Listesi **//
+Frontends dosyası içerisinde DtoLayer katmanı oluşturulur. CatalogDtos dosyası eklenir. İçerisine ResultCategoryDto eklenir.
+CategoryControllerda IHttpClientFactory değişkeni ve ctor oluşturulur.
+IHttpClientFactory ile client oluşturulur. client ile async şekilde categori mikroservisinin linki alınır.
+Eğer çalışıyor ise jsonda deserialize işlemi yapılır.
+

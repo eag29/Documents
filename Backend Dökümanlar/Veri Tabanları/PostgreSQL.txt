@@ -1,0 +1,20 @@
+ PostgreSQL
+**************
+PostgreSQL, açık kaynaklı, nesne-ilişkisel bir veritabanı yönetim sistemidir (ORDBMS). 
+Güçlü, esnek ve genişletilebilir yapısıyla büyük ölçekli uygulamalar ve karmaşık veri işleme gereksinimleri için sıklıkla tercih edilir.
+
+PostgreSQL'in Temel Özellikleri
+✅ Açık Kaynaklı – Ücretsizdir ve topluluk tarafından sürekli geliştirilir.
+✅ ACID Uyumlu – Veri bütünlüğü sağlar, güvenilir işlemler yapar.
+✅ Gelişmiş Sorgulama Yeteneği – SQL standardına uygun çalışır, güçlü sorgu optimizasyonu yapar.
+✅ Nesne-İlişkisel Yapı – JSON, XML gibi veri türlerini destekler.
+✅ Yatay ve Dikey Ölçeklenebilirlik – Büyük veri setleriyle verimli çalışabilir.
+✅ Replikasyon & Yedeklilik – Verinin farklı sunucularda çoğaltılmasını destekler.
+✅ Geniş Eklenti Desteği – PostGIS, Citus gibi eklentilerle genişletilebilir.
+
+PostgreSQL Kullanım Alanları
+🔹 Büyük ölçekli web uygulamaları
+🔹 Veri analitiği ve büyük veri çözümleri
+🔹 Coğrafi bilgi sistemleri (GIS)
+🔹 Mikroservis mimarileri ve bulut tabanlı sistemler
+

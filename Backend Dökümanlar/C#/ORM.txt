@@ -1,0 +1,45 @@
+ORM:
+******
+ORM (Object Relational Mapping), Nesne İlişkisel Eşleme anlamına gelir.
+Veri tabanı ile oop arasında köprü görevi gören bir araçtır.
+
+Basitçe:
+ORM, veritabanındaki tabloları sınıflara (classes), satırları nesnelere (objects), ve sütunları özelliklere (properties/fields) dönüştürür.
+
+Ne işe yarar?
+ORM sayesinde SQL sorguları yazmadan veritabanı işlemleri (CRUD – Create, Read, Update, Delete) yapılabilir.
+
+Örnek (C# ve Entity Framework ile):
+Diyelim ki bir Users tablon var.
+
+Veritabanı tablosu:
+Id	Name	Email
+1	Ahmet	ahmet@mail.com
+ORM ile C# sınıfı:
+public class User
+{
+    public int Id { get; set; }
+    public string Name { get; set; }
+    public string Email { get; set; }
+}
+ORM aracı (örneğin Entity Framework), bu User sınıfını veritabanındaki Users tablosuna otomatik olarak eşler.
+
+Popüler ORM Araçları:
+C# → Entity Framework, Dapper (yarı-ORM)
+Java → Hibernate
+Python → SQLAlchemy, Django ORM
+PHP → Eloquent (Laravel)
+JavaScript/Node.js → Sequelize, TypeORM
+
+Avantajları:
+✅ Daha az SQL kodu yazılır
+✅ Kod okunabilirliği artar
+✅ Nesne yönelimli yapı korunur
+✅ Hata yapma riski azalır
+
+Dezavantajları:
+❌ Karmaşık sorgularda performans düşebilir
+❌ Veritabanı üzerinde tam kontrol kaybolabilir
+❌ Öğrenme eğrisi başlangıçta biraz zordur
+
+

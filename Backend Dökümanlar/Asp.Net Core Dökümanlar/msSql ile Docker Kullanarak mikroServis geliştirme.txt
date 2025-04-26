@@ -1,0 +1,144 @@
+MsSql ile Docker Kullanarak mikroServis geliştirme:
+********************************************
+Onion Architecture kullanarak oluşturuyoruz.
+Order dosyası içerisinde Core(Çekirdek) katmanı dosyasını oluşturuyoruz.
+İçerisine class library olarak domain ve application(uygulama katmanı) oluşturuyoruz.
+Domain katmanının içerisinde entity’ler (domain entities) burada tanımlanır.
+
+Application katmanının içerisinde Interfaces dosyası oluşturulur.
+IRepository interface sınıfı oluşturulur. Referans olarak t verilir.
+Crud imzaları atılır.
+
+Application katmanının içerisinde features dosyası oluşturulur.
+İçerisine CQRS ve Mediator tasarım desenenlerinin dosyası oluşturulur.
+CQRS içerisine Results, Queires, Commands,Handlers dosyaları oluşturulur.
+
+Results dosyası içerisine ilgili entity için 
+GetAddressQueryResult ve GetAddressByIdQueryResult sınıfları oluşturulur.
+ilgili entity'nin property değerleri getirilir.
+
+Queires dosyası içerisine GetAddressByIdQuery sınıfı oluşturulur.
+Id değişkeni oluşturulup ctor verilir.
+
+Commands dosyası içerisine Create,Update ve Remove Commandleri oluşturulur.
+Remove command'de Id değişkeni ve ctor oluşturulur.
+Diğer commandlerde tüm değişkenler verilir. Create de ıd hariç
+
+Handler dosyası içerisinde her bir crud işlemi için sınıf oluşturulur.
+Her sınıfta reposirtoy değişkeni ve yapıcı methodu oluşturulur.
+Her sınıfta ilgili handle methodu oluşturulur.
+
+Infastructure katmanına gelinir. Projeye domain ve application katmanları referans
+Context dosyası ve OrderContext sınıfı oluşturulur. DbContext referansı alır.
+OnConfiguring methodu ile bağlantı yolu verilir. Ardından dbset ile entityler verilir.
+
+Repositories dosyası ve Repositories sınıfı oluşturulur. IRepositories referansı verilir.
+OrderContext değişkeni oluşturulur.
+İmplement edilen tüm methodlar doldurulur.
+
+Presentation katmanına gelinir. api controllerı oluşturulur.
+İlgili crud işlemleri iiçin methodlar ctorları oluşturulduktan sonra doldurulur.
+
+Program.cs içerisinde addscopedd ile handler sınıfları eklenir.
+
+Application ve api katmanına mediator paketleri kurulur
+
+*******************************************************************
+
+Mediator içerisine Results, Queires, Commands,Handlers dosyaları oluşturulur.
+
+Results dosyası içerisine ilgili entity için 
+GetSinifAdiQueryResult ve GetSinifAdiByIdQueryResult sınıfları oluşturulur.
+ilgili entity'nin property değerleri getirilir.
+
+Queires dosyası içerisine GetSinifAdiByIdQuery ve GetSinifAdiQuery sınıfı oluşturulur.
+Siniflar IRequestden referasns alınır ve ilgisi sinif verilir.
+Id değişkeni oluşturulup ctor verilir.
+
+Commands dosyası içerisine Create,Update ve Remove Commandleri oluşturulur.
+Remove command'de Id değişkeni ve ctor oluşturulur.
+Diğer commandlerde tüm değişkenler verilir ve IRequestden referans alır.
+
+Handler dosyası içerisinde her bir crud işlemi için sınıf oluşturulur.
+Her sınıfta reposirtoy değişkeni, yapıcı methodu oluşturulur.
+Her sınıf IRequestHandler ile ilgisli yerlerden referans alır.
+Her sınıfta ilgili handle methodu oluşturulur.
+
+Contoller sinifi oluşturulur. IMediatorden mediator değişkeni ve ctor oluşturulur.
+Crud işlemleri için ilgili metotlar oluşturulan mediator değişkeninde send ile verilir.
+
+Application katmanı içerisinde Service dosyası oluşturulur.
+Static olarak ServiceRegistiration sınıfı oluşturulur.
+
+Program.cs içerisinde addscoped ile typeof şeklinde IReposirtory ve Rpository ekle.
+addAplicationService ile bağlantıyı ekle
+
+OrderContexte gelinir  server=localhost, hostnumarasi olarak guncellenir.
+
+Docker açılır. Portainera bağlanılır. Dbeaver açılır.
+Portainer üzerinden container oluşturulur. msSql linux seçilir.Hostu default hostdan farklı verilir.
+İlk container OrderVt ikinci olarak farklı bir hostda IdentityVt oluşturulur.
+Dbeaver üzerinden bunlar getirilir.
+
+Program.cs içerisinde addDbContext ile orderContext eklenir ve api testi yapılır.
+
+**// Identity Mikroservisi **//
+
+Proje içerisinde Identity Server dosyası eklenir. Cmd ile kurulumu yapılıp proje çağrılır.
+Application User içerisinde Name ve Surname property oluşturulur.
+appsettings içerisinde bağlantı yolu tanımlanır. 
+İlgili paket güncellemeleri yapıldıktan sonra Startup içerisinde useSqlServer olarak bağlantı verilir.
+
+Mig ekleme ve güncelleme işlemi yapılır.
+
+Dtos dosyası içerisine UserRegisterDto sınıfı oluşturulur. İlgili propertyler Requried attributesi ile verilir. 
+
+Controller dosyası ve RegisterController sınıfı oluşturulur. Gönderme methodu oluşturulur.
+Method, Dto sınıfından parametre alır. Application User sınıfından verileri alır.
+_userManagerdan CreateAsync methodu çağrılır. alınan veriler ve şifre verilir.
+Şartlı blok ile başarılı ve başarısız durumunda return ok ile geriye mesaj döndürülür.
+
+Postman ile veri ekleme işlemi yapılır.
+
+**// Json Web Token **//
+
+Config içerisinde 3 tane static olarak IEnumerable türünde prop oluşturulur.
+İlk olarak Api Resource prop oluşturulur. s
+Methodun içerisinde istenilen miktroServis için kullanıcıdan yapılmasını istenilen işlem için Scopes ile izin verilir.
+İkinci olarak IdentityResource propu oluşturulur.
+Seçilen mikroservisin entityleri burda verilir.
+Üçüncü olarak ApiScope propu oluşturulur.Method içerisinde verilen izin ve sunulacak mesaj döndürülür.
+Dördüncü olarak Client propu oluşturulur. Visitor,Manager ve Ddmin için yeni client oluşturulur.
+Oluşturulan clientler içiresinde ilgili ClientId,ClientName,AllowedGrantTpes,ClientSecrets ve AllowScopes atamaları yapılır.
+Adminde AllowScopes IdentityServerConstants ile profilde görünülmesini istenen veriler getirilir.
+
+Startup içerisine .AddInMemoryApiResources(Config.ApiResources) eklenir.
+Postmane gelinir selftpostdan açılan link postmande /connect/token üzerinden post seçilir.
+Body içerisinde client_id, client_secret ve grant_type=client_credentials değerleri doldurularak token alınır.
+
+**// İdentity miktoservisini koruma altına alma **//
+
+Startup'ta ConfigureServices içerisine addLocalApiAuthentication methodu eklenir.
+Configure methodu içerisine use.authentication ve authorization methodları eklenir.
+
+Controller sınıfına [Authorize(LocalApi.PolicyName)] attributesi eklenir. 
+Bu attributenin altında kalanlar acces tokene sahip olmak zorunda kalır.
+
+Config içerisinde her methoda metotascope name eklenir.
+
+Catalog içerisindeki program.cs ye gelinir.
+builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(opt =>
+{
+    opt.Authority = builder.Configuration["IdentityServerUrl"];
+    opt.Audience = "ResourceCatalog";
+    opt.RequireHttpsMetadata = false;
+}); kodu eklenir. alt kısımda use.Authentication() methodu eklenir.
+Catalog içerisindeki appsettings.jsone gelinir. Loggingin üstüne "IdentityServerUrl": "hhtp://localhost:5001", kodu verilir.
+IdentityServerda launchSetting.sjone gelinir https http olarak düzeltilir.
+Categories controller sınıfının üstüne [authorize] attributesi eklenir.
+
+Proje hem ıdentity hemde catalog mikroservisi üzerinden çalıştırılır. Aynı işlemler diğer mikroservisler içinde yapılır.
+
+**// Taracıları Ayağa kaldırma **//
+Identity server ve miikroservislerin launchsettings.json dosyasına gelinir. lanuchBrowser false yapılır.
+Mikrosevislerin ikinci urlsi kaldırılır.

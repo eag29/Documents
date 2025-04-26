@@ -1,0 +1,3 @@
+Her bir controller sınıfının en üstüne [Authorize] eklenerek sisteme giriş yapmadan sayfa açılmasının önüne geçilmiş olur.
+Controller sınıfları çok fazla ise Global.asax.cs sınıfının içerisine GlobalFilters.Filters.Add(new AuthorizeAttribute()); kod bloğu eklenerek [Authorize] işlemi yapılmış olur.
+LoginController sınıfının en üstüne [AllowAnonymous] eklenerek login sayfası [Authorize] işleminden muaf tutulmış olur.

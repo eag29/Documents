@@ -1,0 +1,30 @@
+Ocelot, .NET tabanlı API Gateway çözümüdür ve özellikle microservices (mikro hizmet) mimarisinde kullanılır. 
+.NET Core ile geliştirilen uygulamalarda, istemcilerin (client) backend servisleriyle güvenli ve düzenli bir şekilde iletişim kurmasını sağlamak için kullanılır.
+
+Ocelot'un Temel Özellikleri
+✅ Routing (Yönlendirme): Gelen HTTP isteklerini uygun mikro hizmetlere yönlendirir.
+✅ Load Balancing (Yük Dengeleme): Gelen istekleri farklı sunuculara dağıtarak performansı artırır.
+✅ Authentication & Authorization (Kimlik Doğrulama ve Yetkilendirme): JWT, Identity Server gibi mekanizmalarla kullanıcı doğrulama sağlar.
+✅ Rate Limiting (İstek Sınırlandırma): DDoS saldırılarına karşı koruma amaçlı belirli sayıda isteği kısıtlama yapabilir.
+✅ Caching (Önbellekleme): Sık yapılan isteklere hızlı cevap verebilmek için yanıtları önbelleğe alır.
+✅ Logging & Monitoring (Loglama ve İzleme): API trafiğini kaydedip izleme imkanı sunar.
+
+Neden Ocelot Kullanılır?
+Mikroservislerin yönetimini kolaylaştırır.
+Güvenliği artırır (kimlik doğrulama, yetkilendirme vb.).
+Performansı iyileştirir (önbellekleme, yük dengeleme vb.).
+Servislerin birbirinden bağımsız çalışmasını sağlar.
+
+Diyelim ki, bir e-ticaret uygulamanız var ve farklı servislerden oluşuyor:
+
+Sipariş Servisi (Order Service)
+Kullanıcı Servisi (User Service)
+Ürün Servisi (Product Service)
+Eğer istemciler (mobil veya web uygulaması), her servise ayrı ayrı erişirse, bu karmaşıklık ve güvenlik sorunları yaratır. Bunun yerine Ocelot API Gateway kullanarak:
+
+Tüm istekleri tek bir noktada toplayabilirsiniz.
+Gelen istekleri ilgili mikro servise yönlendirebilirsiniz.
+Kimlik doğrulama, yük dengeleme ve önbellekleme gibi işlemleri merkezi olarak yönetebilirsiniz.
+
+Sonuç
+Ocelot, mikro hizmet mimarisinde API yönlendirme, güvenlik, önbellekleme gibi işlemleri merkezi hale getirerek sistemin yönetimini kolaylaştıran güçlü bir .NET API Gateway çözümüdür.

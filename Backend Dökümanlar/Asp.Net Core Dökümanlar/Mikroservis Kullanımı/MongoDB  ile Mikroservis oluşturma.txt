@@ -1,0 +1,40 @@
+MongoDB  ile Mikroservis oluşturma:
+**********************************
+**// Proje ve Paket kurulumları **//
+.netCore web Api projesi oluşturulur. MongoDB paketleri kurulur.
+
+**// Entites işlemleri **//
+Projede yer alıcak tabloların karşılığını entity tutar. Oluşturulacak her bir tablo için entities dosyası içerisine sınıf oluşturulur.
+Tablolarda yer alacak sütunların karşılığını property tutar. mongoDb'de ID değişikeni string olarak verilir. 
+Sınıf adıyla aynı olucak şekilde id değişkeni oluşturulur. Örnek: SinifAdıID.
+[BsonId] ve [BsonRepresentation(BsonType.ObjectId)] attributes id propertiesin üstünde verilir.
+
+**// Dtos ve Mapping işlemleri **//
+Yapılacak crud işlemleri için dto sınıfları oluşturulur. Örnek CrudAdiSinifAdiDto.
+Create,Update,Result,GetById işlemleri için dto sınıfları oluşturulabilir.
+Mapping: Entities ile Dtos eşleşmesini yapar. Mapping dosyası içerisinde GeneralMapping sınıfı oluşturulur.
+CreateMap methodu ile varlıkların dtoları ile eşleşmesi yapılır. Tersi işlemin gerçekleşebilmesi içinde sonunda ReverseMap() verilir.
+ 
+**// Settings işlemleri **//
+
+appsettings: Bağlantı işlemini gerçekleştirecek olan configurationdur. appsettings'de varlıklar, bağlantı linki ve veritabanı adı tanımlanır.
+Örnek: "DatabaseSettings": {
+    "VarlikAdiCollectionName": "VarlikAdis",
+        "ConnectionString": "mongodb://localhost:27017",
+        "DatabaseName": "MultiShopCatalog"
+}
+Settings dosyası oluşturulur.
+IDatabaseSettings interface oluşturulur. DatabaseSettings sınıfı oluşturulur. IDatabaseSettings'den referans alır.
+İçerilerine appsettings'de yazılan collectionlar verilir.
+
+**// Services işlemleri **//
+Services dosyası oluşturulur. Her bir entity için services dosyası oluşturulur.
+İlk olarak crud işlemlerinin tutulduğu ISinifAdiService interface'i oluşturulur.
+Daha sonra SinifAdiService oluşturulur. ISinifAdiService interface'i  referans olarak verilir. implement edilir.
+IMongoCollection ile entitiy verilir. Imapper oluşturulur. Ctor yapı kurulur. Ctor içerisinde bağlantı yolu, veri tabanı ve tablo adı alınır.
+CreateAsync, UpdateAsync methodlarında ilk olarak dışarıdan gelen parametre ile eşleşme yapılır.
+Devamında ise tanımlanan collection değişkeni ile asyn şekilde crud işlemi yapılır.
+
+**// Controller işlemleri **//
+api controller oluşturulur. IVarlikAdiService değişkeni verilir ve ctor oluşturulur.
+İlgili attributeler ile asenkron bir şekilde crud işlemlerinin metotları yazılır.

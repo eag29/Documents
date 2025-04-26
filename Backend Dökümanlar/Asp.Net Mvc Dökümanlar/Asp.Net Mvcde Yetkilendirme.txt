@@ -1,0 +1,14 @@
+*Yetkilendirme verilecek controllera gidilir. 
+*Controller sınıfının en üstüne [Authorize] eklenir.
+*Yetkilendirme verilecek sayfanın yazıldı methoda gidilir. [Authorize(Roles ="RolDegeri")] verilir.
+
+**Rols klasörü oluşturulur.
+**AdminRoleProvider sınıfı oluşturulur. RoleProvider sınıfından referans alınır. Implement edilir.
+**GetRolesForUser methodunun içerisine             
+/*
+Context _context = new Context();
+var k = _context.Admins.FirstOrDefault(x => x.KullaniciAd == username);
+return new string[] { k.Yetki };
+*/
+kod bloğu eklenir
+

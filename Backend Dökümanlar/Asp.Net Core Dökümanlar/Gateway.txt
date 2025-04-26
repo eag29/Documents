@@ -1,0 +1,16 @@
+Gateway, farklı ağlar veya protokoller arasında veri iletimini sağlayan bir ağ cihazıdır. 
+Özellikle, birbirinden farklı protokol, veri formatı veya mimariye sahip ağların birbiriyle iletişim kurmasına yardımcı olur.
+
+Gateway'in Temel Görevleri:
+✅ Protokol Çevirisi: Farklı ağ protokollerini birbirine dönüştürerek iletişimi mümkün kılar.
+✅ Veri Formatı Dönüşümü: Bir ağdaki veri formatını, diğer ağın anlayabileceği hale getirir.
+✅ Güvenlik ve Trafik Kontrolü: Bazı gateway’ler güvenlik duvarı (firewall) veya VPN gibi işlevler de üstlenebilir.
+
+Gateway Nerelerde Kullanılır?
+📌 Ev ve Ofis Ağları: Modem/router cihazları, yerel ağı (LAN) internet ağına (WAN) bağlayan bir gateway gibi çalışır.
+📌 Kurumsal Ağlar: Şirket içi ağların bulut sistemleri veya farklı şubelerle bağlantısını sağlamak için kullanılır.
+📌 IoT (Nesnelerin İnterneti): Sensörler veya akıllı cihazların farklı ağlara bağlanmasını sağlar.
+📌 Telekomünikasyon: Telefon ağlarını internet veya VoIP sistemleriyle entegre etmek için kullanılır.
+
+Gateway’ler donanımsal (bir cihaz) veya yazılımsal (bir program) olabilir. Kullanım alanına göre değişen türleri vardır, 
+örneğin VoIP Gateway, Cloud Gateway, API Gateway gibi.

@@ -1,0 +1,19 @@
+CORS
+********
+CORS (Cross-Origin Resource Sharing), web tarayıcılarının farklı origin'ler (kaynaklar) arasındaki istekleri kontrol etmesine yardımcı olan bir güvenlik mekanizmasıdır.
+Bir web sitesinin, kendi domaini dışındaki bir domain, protokol veya port üzerinden yapılan HTTP isteklerini nasıl ele alacağını belirler.
+
+📌 CORS Neden Gereklidir?
+Web tarayıcıları, güvenlik amacıyla aynı kaynak politikası (Same-Origin Policy, SOP) uygular. 
+Bu politika, bir web sayfasının yalnızca kendi origin'inden gelen verilerle etkileşime girmesine izin verir. 
+Ancak modern web uygulamalarında API'ler ve dış kaynaklara erişim ihtiyacı doğar. 
+İşte burada CORS devreye girer ve güvenli bir şekilde cross-origin (çapraz kaynak) isteklerin nasıl yapılacağını tanımlar.
+
+🚀 Sonuç
+CORS, web tarayıcılarının farklı origin'ler arasında güvenli istek yapmasını sağlayan bir güvenlik mekanizmasıdır.
+
+Sunucunun Access-Control-Allow-Origin başlığı döndürmesi gerekir.
+
+Basit istekler direkt yapılabilirken, bazı isteklerde tarayıcı preflight kontrolü yapar.
+
+ASP.NET Core gibi backend teknolojilerinde CORS açıkça tanımlanmalıdır.

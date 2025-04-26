@@ -1,0 +1,27 @@
+Repository Desing Pattern:
+***********************
+Repository Design Pattern, veri erişim katmanını soyutlamak ve uygulama ile veri erişimi arasındaki bağımlılığı azaltmak için kullanılan bir yazılım tasarım desenidir.
+Bu desen sayesinde, veritabanı sorguları doğrudan iş mantığına yazılmaz, bunun yerine veri erişim işlemleri bir "repository" aracılığıyla gerçekleştirilir.
+
+🛠️ Temel Amaçları:
+Soyutlama: Veritabanı işlemlerini soyutlar ve veri kaynağının detaylarını gizler.
+Kolay Test Edilebilirlik: Mock veya in-memory veri tabanlarıyla kolayca test edilebilir.
+Bakım Kolaylığı: İş mantığında değişiklik olmadan veritabanı değiştirme imkânı sunar.
+Kodun Tekrar Kullanımı: Veri erişim kodlarının tekrar kullanılmasını sağlar.
+
+🧩 Basit Mimari:
+Entity (Model): Veri tabanındaki tabloların karşılığı olan sınıflar.
+Repository Interface: Veri erişim operasyonlarının tanımlandığı arayüz.
+Repository Implementation: Arayüzü implement eden somut sınıf.
+Service Layer (Opsiyonel): İş mantığının yer aldığı katman.
+Dependency Injection: Repository'leri bağımlılık enjeksiyonu ile kullanmak.
+
+⚠️ Dikkat Edilmesi Gerekenler:
+Repository katmanında iş mantığı (business logic) olmamalıdır.
+Generic Repository kullanarak kod tekrarını azaltabilirsiniz.
+Performans için gereksiz veritabanı çağırımlarından kaçının.
+
+🎯 Özet:
+Repository Pattern, veri erişim detaylarını soyutlamak ve kodun sürdürülebilirliğini artırmak için güçlü bir araçtır. 
+Özellikle büyük ve karmaşık projelerde, veritabanı değiştirilse bile iş mantığının etkilenmemesini sağlar.
+.NET Core'da EF Core gibi ORM araçları zaten bu deseni kısmen destekler, ancak projede temiz mimari istiyorsanız bu yapı oldukça işlevseldir. 🚀

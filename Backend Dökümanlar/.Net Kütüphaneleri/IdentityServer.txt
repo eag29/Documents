@@ -1,0 +1,38 @@
+IdentityServer:
+*************
+IdentityServer, kimlik doğrulama (authentication) ve yetkilendirme (authorization) işlemlerini yönetmek için kullanılan açık kaynaklı bir OpenID Connect ve OAuth 2.0 framework'üdür. 
+NET tabanlı uygulamalar için kimlik yönetimi sağlayarak API güvenliği, tek oturum açma (SSO), kullanıcı yönetimi ve erişim kontrolü gibi özellikler sunar.
+
+IdentityServer’ın Temel Özellikleri;
+1. Kimlik Doğrulama (Authentication)
+Kullanıcıların kimliğini doğrular.
+OpenID Connect protokolünü destekler.
+Çok faktörlü kimlik doğrulama (MFA) ile genişletilebilir.
+
+2. Yetkilendirme (Authorization)
+OAuth 2.0 protokolünü kullanarak erişim belirteçleri (Access Token) üretir.
+API’lere erişim izinlerini kontrol eder.
+
+3. Tek Oturum Açma (SSO - Single Sign-On)
+Birden fazla uygulama için tek bir oturum açma mekanizması sağlar.
+
+4. API Güvenliği
+API’lere erişimi denetlemek için erişim belirteçleri kullanır.
+Token tabanlı güvenlik sağlar (JWT, Reference Token).
+
+5. Kullanıcı Yönetimi ile Entegrasyon
+Kullanıcı bilgilerini farklı kimlik sağlayıcılarla (Identity Provider - IdP) entegre edebilir.
+Örneğin, Active Directory, Google, Facebook veya özel kullanıcı veri tabanları ile çalışabilir.
+
+6. Uyumluluk ve Genişletilebilirlik
+Açık standartlara uygundur (OAuth 2.0, OpenID Connect).
+.NET Core ve .NET 6/7+ ile kullanılabilir.
+Modüler yapısı sayesinde özelleştirilebilir.
+
+IdentityServer Kullanım Senaryoları
+Web ve Mobil Uygulamalarda Kullanıcı Doğrulama
+Mikroservis Mimarilerinde API Güvenliği
+Kurumsal Çözümler için Tek Oturum Açma (SSO)
+B2B ve B2C Kimlik Yönetimi Çözümleri
+
+Eğer kimlik yönetimi için açık kaynak ve özelleştirilebilir bir çözüm arıyorsanız, IdentityServer iyi bir seçenek olabilir. Özellikle .NET Core projeleriyle uyumluluğu nedeniyle Microsoft ekosisteminde sıkça tercih edilir. 🚀

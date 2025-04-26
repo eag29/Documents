@@ -1,0 +1,77 @@
+EntityFramework(Code First)
+***************************
+Adım 1: İlk olarak DAL dosyası oluşturulur.Data Acces Layer(Veriye Erişim Katmanı)
+İçerisine Entities ve Context dosyaları oluşturulur. 
+
+Entites dosyası:
+Entities dosyası içerisinde tablolar oluşturulur.
+Code first yaklaşımında sınıflar(tabloları,tables), property(sütunları, column), yerine geçer.
+
+Context dosyası:
+Context sınıfı oluşturulur. DbContexten referans alır. EntityFramework paketi yüklenir.
+DbSet ile oluşturulan tablolar verilir.
+App.config dosyasında <configSections> altında <connectionStrings> içerisine bağlantı yolu oluşturulur. 
+<add name="VeriTabanıAdı" connectionString="baglanti yolu olusturulur"  providerName="System.Data.SqlClient">
+
+Adım2: Migration işlemi:
+Package Manager Console içerisinde enable-migration ile migration migration oluşturulur.
+add-migration migadi ile veritabanı sqlServera aktarılır.
+update-database ile güncelleme işlemleri yapılır.
+
+Adım3: Crud işlemleri
+Crud işlemlerinin yapılacağı sınıfın içerisine context nesnesi çağrılır.
+
+Listeleme işlemi: datagridview.datasource = context.TabloAdi.ToList();
+
+Ekleme işlemi: 
+
+TabloAdi tabloAdi = new TabloAdi();
+tabloAdi.degisken = txt1.text;
+tabloAdi.degisken2 = txt2.text;
+context.tabloAdi.Add(tabloadi);
+db.saveChanges();
+MessageBox.Show();
+
+Güncelleme işlemi: 
+
+var id = int.Parse(txtid.text);
+var value = context.TabloAdi.find(id);
+value.degisken = txt1.text;
+value.degisken2 = txt2.text;
+context.tabloAdi.update(value);
+db.saveChanges();
+MessageBox.Show();
+
+Silme işlemi:
+var id = int.Parse(txtid.text);
+var value = context.TabloAdi.find(id);
+context.TabloAdi.Remove(value);
+MessageBox.Show();
+
+Arama işlemi:
+var values = context.TabloAdi.Where(x=> x.name == txtname.text).toList();
+ datagridview.datasource = values;
+
+Arama işlemi(Harfa Göre):
+var values = context.Categories.Where(x => x.CategoryName.Contains(txtName.Text)).ToList();
+dataGridView1.DataSource = values;
+
+Comboxa veri çekme:
+var values = context.TabloAdi.ToList();
+comboBox1.ValueMember = "ID";
+comboBox1.DisplayMember = "AD";
+comboBox1.DataSource = values;
+
+Birleştirme işlemi
+/*
+var values = db.TblProduct.Join
+(db.TblCategory,
+product=>product.CategoryId,
+category=>category.CategoryId,
+product, category) => new
+{
+ProductId = product.ProductId,
+ProductName = product.ProducName
+}).ToList();
+dataGridView1.DataSource = values;
+*/

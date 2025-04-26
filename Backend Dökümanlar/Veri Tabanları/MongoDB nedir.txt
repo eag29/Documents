@@ -1,0 +1,18 @@
+MongoDB:
+************
+MongoDB, NoSQL yapıda bir veri tabanıdır.
+MongoDB’de her kayıt bir doküman olarak ifade edilir. 
+Dökümanlar json formatı şeklinde saklanır.
+Table yapısını burada collection, row yapısını document, column yapısını ise field alır
+/*/*/*/*/*/
+ID değeri string olarak verilir ve alttaki attributeleri alır.
+[BsonId]
+[BsonRepresentation(BsonType.ObjectId)]
+-------------------------------------------------------
+İlişki tablolar verilirken [BsonIgnore] attributesini alır
+BsonIgnore okuma ve yazma sırasında bir özelliğin göz ardı edilmesini yapılandıran bir özniteliktir.
+ÖrneğinCategory özelliği BsonIgnore ile işaretlenmiştir. 
+Bu Product sınıfının nesnelerinin MongoDB'de saklanırken Category özelliğinin dikkate alınmaması gerektiğini belirtir.
+Yani bu da demek oluyor ki bu özelliği Product tablosunda alan olarak oluşturmasını istemiyoruz.
+Bu yaklaşım, veritabanı tasarımını basitleştirir ve performansı arttırmak için kullanılabilir.
+

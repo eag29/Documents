@@ -1,0 +1,28 @@
+Json Web Token:
+*****************
+JSON Web Token (JWT), JSON formatında bilgi taşıyan ve genellikle kimlik doğrulama ve yetkilendirme süreçlerinde kullanılan güvenli bir token yapısıdır. 
+JWT, özellikle web servisleri ve API'ler için yaygın olarak tercih edilir.
+
+JWT'nin Yapısı
+Bir JWT üç ana bileşenden oluşur ve bu bileşenler nokta (.) ile ayrılır:
+
+JWT Nasıl Çalışır?
+Kullanıcı giriş yaptığında, sunucu belirli bir gizli anahtar ile bir JWT oluşturur.
+Bu token istemciye (örneğin, bir web tarayıcısı veya mobil uygulama) gönderilir.
+Kullanıcı bir istek yaptığında, bu token başlık (header) içerisinde gönderilir.
+Sunucu, gelen token’i doğrulayarak isteğin geçerli olup olmadığını kontrol eder.
+Eğer token geçerliyse, kullanıcıya erişim izni verilir.
+
+JWT'nin Avantajları
+✅ Taşınabilir ve Hafif: JSON formatı sayesinde az yer kaplar ve taşınabilir.
+✅ Stateless (Durumsuz): Sunucu, oturum bilgisini tutmaz, yalnızca token’i doğrular.
+✅ Güvenli: Doğru bir şekilde şifrelenirse güvenlidir. Ayrıca, imzalandığı için değiştirilemez.
+✅ Kolay Entegrasyon: Web, mobil ve mikro servis mimarileri için uygundur.
+
+JWT Kullanım Alanları
+Kimlik Doğrulama (Authentication): Kullanıcıların giriş yapıp yapmadığını kontrol etmek için kullanılır.
+Yetkilendirme (Authorization): Kullanıcının belirli işlemleri yapmasına izin verir (örneğin, admin paneline erişim).
+API Güvenliği: API isteklerinin doğrulanmasını sağlar.
+
+Sonuç
+JWT, modern web uygulamalarında güvenli bir kimlik doğrulama yöntemi olarak yaygın şekilde kullanılmaktadır. Ancak, güvenliği artırmak için HTTPS kullanılmalı, token süresi kısa tutulmalı ve gerekirse yenileme token’ları (refresh token) ile desteklenmelidir.

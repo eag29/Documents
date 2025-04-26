@@ -1,0 +1,6 @@
+cmd ile IdentityServer Kurulumu
+******************************
+cmdye==> dotnet new  -i identityserver4.templates yazılır
+Proje içerisinde ve dosya içerisinde IdentityServer dosyası oluşturulur. Dosya yolu kopyanılır.
+cmdye başında cd ile verilir. Gelen yanıtda dotnet new is4aspid --name ProjeAdi.IdentityServer verilir. N
+Proje içerisinde Services dosyasının dışarısında IdentityServer dosyası oluşturulu.Harici proje ile aktarılır.

@@ -1,0 +1,11 @@
+RapidAPI
+***********
+Geliştiricilerin farklı API'leri tek bir platform üzerinden keşfetmesine, test etmesine ve entegre etmesine olanak tanıyan bir API pazaryeridir.
+Özellikle hızlı ve kolay API entegrasyonları sağlamak için kullanılır.,
+
+RapidAPI’nin Sağladığı Avantajlar:
+1.Geniş API Kütüphanesi: Farklı kategorilerde (hava durumu, finans, yapay zeka, dil işleme, ödeme sistemleri vb.) binlerce API içerir.
+2.Tek Bir API Anahtarı ile Kullanım: Farklı API'leri kullanırken her biri için ayrı ayrı anahtar almak yerine, RapidAPI tek bir API anahtarı ile bunlara erişim sağlar.
+3.Hızlı Entegrasyon: API’leri test etmek ve projeye entegre etmek için kullanıcı dostu bir arayüz sunar.
+4.Ücretlendirme Modelleri: Ücretsiz, abonelik veya kullanım başına ödeme gibi farklı fiyatlandırma seçenekleri sunar.
+5.Dokümantasyon ve Test Aracı: API’leri test etmek için doğrudan platform üzerinde istek göndermeyi sağlayan araçlar sunar.

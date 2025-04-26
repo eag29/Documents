@@ -1,0 +1,38 @@
+Docker:
+*********
+Docker, yazılımları container (kapsayıcı) adı verilen hafif,
+ taşınabilir ve izole edilmiş ortamlar içinde çalıştırmaya yarayan 
+ açık kaynaklı bir platformdur.
+Bu sayede bir uygulama, bağımlılıklarıyla birlikte paketlenerek 
+ farklı sistemlerde sorunsuz bir şekilde çalıştırılabilir.
+
+Docker'ın Temel Faydaları
+Platform Bağımsızlığı: Bir uygulamayı geliştirdiğin ortamdan, test veya üretim ortamına aynı şekilde taşıyabilirsin.
+Kaynak Verimliliği: Sanal makinelerden daha hafif olduğu için daha az kaynak tüketir.
+Hızlı Dağıtım ve Ölçeklenebilirlik: Uygulamalar çok hızlı bir şekilde başlatılabilir ve ölçeklendirilebilir.
+Bağımlılık Yönetimi: Uygulamanın tüm bağımlılıkları (kütüphaneler, araçlar vb.) Docker imajına dahil edilir, böylece "bende çalışıyor ama sende çalışmıyor" sorununu çözer.
+
+Docker Temel Kavramları
+Docker Image (İmaj): Çalıştırılabilir ve taşınabilir bir yazılım paketidir. İçinde işletim sistemi, bağımlılıklar ve uygulama kodu bulunur.
+Docker Container (Kapsayıcı): Docker imajından oluşturulan çalışan bir örnektir. İzole bir ortam sağlar.
+Dockerfile: Bir Docker imajını oluşturmak için kullanılan betik dosyasıdır.
+Docker Hub: Önceden oluşturulmuş Docker imajlarını barındıran çevrimiçi bir depodur.
+Docker Compose: Birden fazla servisi yönetmek için kullanılan bir araçtır (örneğin: veritabanı, API ve frontend'i aynı anda çalıştırmak için).
+
+Docker Kullanım Senaryoları
+Yazılım geliştirme ve test süreçlerini kolaylaştırma
+Mikro servis mimarisinde servisleri izole çalıştırma
+CI/CD (Continuous Integration/Continuous Deployment) süreçlerinde otomasyon sağlama
+Farklı işletim sistemlerinde aynı yazılımı tutarlı bir şekilde çalıştırma
+
+Docker Volumes, Docker Container’larındaki verileri saklamamız veya 
+ Container’lar arasında veri paylaşmamız gerektiğinde çok kullanışlıdır. 
+Docker Volumes çok önemli bir kavramdır.
+Çünkü Docker Container silindiğinde tüm dosya sistemi de yok edilir.
+Bu gibi durumlarda verileri bir şekilde saklamak istiyorsak, 
+Docker Volumes kullanmamız gerekiyor.
+
+Portainer, Docker veya Docker Swarm Cluster’ımızı yönetmemizi sağlayan bir management UI’dır. 
+Docker’ı terminalden kullanmak sizlere işkence gibi geliyorsa, docker’ı bir arayüz ile yönetmek/kullanmak istiyorsanız portainer tamda bu anda yardımınıza koşan tatlımı tatlı bir yardımcı.
+
+Dbeaver, bütün veri tabanlarını yönetmeye olanak sağlayan bir vt yönetim panelidir.

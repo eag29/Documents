@@ -1,0 +1,19 @@
+Veri Tabanı Temel Kavramları: 
+****************************
+Veri; İşlenmemiş gerçekler ya da izlenimlenlerdir. Harf, rakam, sembol, işaretler.
+Bilgi(Enformasyon); Verinin işlenmiş halidir.
+Veritabanı: Birbiriyle ilişkili olan mantıksal ve fiziksel veriler bütünüdür.
+-------
+Veri Tabanı Yönetim Sistemi(VTYS-Database Management System)
+Veri tanımlamak,
+Veritabanı oluşturmak,
+Veritabanında işlem yapmak,
+Veritabanında farklı kullanıcı yetkilerini belirlemek,
+Veritabanının bakımını ve yedeklemesini yapmak için geliştirilimiş programlar bütünüdür.
+----------
+Veritabanı Türleri;
+*** Hiyerarşik Veritabanı
+*** Ağ Veritabanı
+*** İlişkisel Veritabanı
+*** Nesneye Yönelik Veritabanı
+

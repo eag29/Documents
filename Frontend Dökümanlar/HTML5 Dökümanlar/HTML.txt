@@ -1,0 +1,81 @@
+HTML
+********
+Temel HTML Etiketleri
+<!DOCTYPE html>	HTML belgesinin sürümünü belirtir (HTML5 için kullanılır).
+<html>	HTML belgesinin başlangıcını ve sonunu belirler.
+<head>	Sayfa hakkındaki meta bilgileri içerir.
+<title>	Sayfa başlığını belirler (tarayıcı sekmesinde görünür).
+<meta>	Karakter seti, açıklama, yazar gibi bilgileri ekler.
+<link>	Harici CSS dosyaları ile bağlantı kurar.
+<script>	JavaScript kodlarını sayfaya ekler.
+<style>	Sayfaya özel CSS stilleri eklemek için kullanılır.
+
+Metin ve Yapı Etiketleri
+Etiket	Açıklama
+<body>	Sayfanın görünen içeriğini içerir.
+<h1> - <h6>Başlık etiketleri (h1 en büyük, h6 en küçük).
+<p>	Paragraf oluşturur.
+<br>	Satır sonu ekler (boşluk bırakmadan alt satıra geçer).
+<hr>	Yatay çizgi ekler.
+<strong>	Metni kalın yapar (anlam açısından önemli).
+<b>	Metni sadece görsel olarak kalın yapar.
+<em>	Metni italik yapar (anlam açısından vurgulu).
+<i>	Metni sadece görsel olarak italik yapar.
+<mark>	Metni fosforlu kalemle işaretlenmiş gibi gösterir.
+<small>	Küçük boyutlu metin oluşturur.
+<del>	Üstü çizili metin oluşturur.
+<ins>	Altı çizili metin oluşturur.
+<sub>	Alt simge (H₂O gibi) oluşturur.
+<sup>	Üst simge (x² gibi) oluşturur.
+
+Bağlantı ve Navigasyon Etiketleri
+Etiket	Açıklama
+<a href="URL">	Sayfalar arası bağlantı oluşturur.
+<nav>	Navigasyon menülerini belirtmek için kullanılır.
+
+Liste Etiketleri
+Etiket	Açıklama
+<ul>	Sırasız liste oluşturur.
+<ol>	Sıralı liste oluşturur.
+<li>	Liste öğesi oluşturur.
+<dl>	Açıklamalı liste (definition list) oluşturur.
+<dt>	Tanımlanan terimi belirtir.
+<dd>	Tanımın açıklamasını içerir.
+
+Tablo Etiketleri
+Etiket	Açıklama
+<table>	Tablo oluşturur.
+<tr>	Tablo satırı ekler.
+<th>	Başlık hücresi oluşturur.
+<td>	Normal hücre ekler.
+<thead>	Tablo başlığını tanımlar.
+<tbody>	Tablo gövdesini tanımlar.
+<tfoot>	Tablo alt bilgisini tanımlar.
+
+Form Etiketleri
+Etiket	Açıklama
+<form>	Form başlatır.
+<input>	Kullanıcıdan veri almak için çeşitli alanlar oluşturur.
+<textarea>Çok satırlı metin kutusu oluşturur.
+<button>	Düğme (buton) ekler.
+<select>	Açılır menü (dropdown) oluşturur.
+<option>	Açılır menü içindeki seçenekleri belirler.
+<label>	Form elemanlarını etiketlemek için kullanılır.
+
+Medya Etiketleri
+Etiket	Açıklama
+<img>	Görsel eklemek için kullanılır.
+<audio>	Ses dosyaları ekler.
+<video>	Video dosyaları ekler.
+<source>	Ses ve video kaynaklarını belirlemek için kullanılır.
+<iframe>	Başka bir web sayfasını gömme (embed) yapar.
+
+Etiket	Açıklama
+<div>	Blok seviyesinde bir kapsayıcıdır.
+<span>	Satır içi (inline) kapsayıcıdır.
+<section>	İçerik bölümleri oluşturur.
+<article>	Bağımsız makaleler veya içerik bölümleri tanımlar.
+<aside>	Kenar çubuğu veya ek bilgiler için kullanılır.
+<header>	Sayfa veya bir bölümün üst kısmını belirtir.
+<footer>	Sayfa veya bir bölümün alt bilgisini belirtir.
+<main>	Sayfanın ana içeriğini belirler.

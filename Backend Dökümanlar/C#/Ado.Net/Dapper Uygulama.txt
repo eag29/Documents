@@ -1,0 +1,31 @@
+Dapper
+********
+İlk başta bağlantı oluşturulur.
+
+Listeleme metodu:
+strinq query = sql listeleme sorgusu;
+var values = await baglanti.QueryAsync<ResultSinifAdiDto>(query);
+datagridView.dataSource = values;
+
+Ekleme metodu:
+strinq query = sql ekleme sorgusu;
+var parameters = new DynamicParameters();
+parameters.Add("@p1",txtname.text);
+await connection.ExecuteAsync(query,parameters);
+
+Silme metodu:
+strinq query = sql silme sorgusu;
+var parameters = new DynamicParameters();
+parameters.Add("@p1",txtname.text);
+await connection.ExecuteAsync(query,parameters);
+
+Güncelleme metodu:
+strinq query = sql güncelleme sorgusu;
+var parameters = new DynamicParameters();
+parameters.Add("@p1",txtname.text);
+await connection.ExecuteAsync(query,parameters);
+
+İstatistikler:
+strinq query = sql sorgusu;
+var deger = await.connection.ExecuteSalaryAsync<int>(query);
+lbl.text = count;

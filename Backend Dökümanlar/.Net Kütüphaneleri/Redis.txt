@@ -1,0 +1,25 @@
+Redis:
+********
+Redis (Remote Dictionary Server), yüksek performanslı, açık kaynaklı, bellek içi (in-memory) bir veri yapılandırma deposudur. 
+Genellikle önbellekleme, mesaj kuyruğu, oturum yönetimi ve gerçek zamanlı analitik gibi işlemler için kullanılır.
+
+🚀 Redis'in Temel Özellikleri
+1. Bellek İçi Çalışma: Verileri RAM'de saklayarak düşük gecikme ve yüksek performans sağlar.
+
+2. Çeşitli Veri Yapıları:
+String
+List (Liste)
+Set (Küme)
+Sorted Set (Sıralı Küme)
+Hash (Sözlük)
+Bitmaps, HyperLogLogs ve Streams gibi özel yapılar
+
+3. Dağıtık Mimari Desteği: Redis Cluster sayesinde veri parçalama (sharding) ve yüksek erişilebilirlik sağlar.
+4. Kalıcılık (Persistence): Opsiyonel olarak verileri diske yazar (RDB - snapshot ve AOF - Append Only File yöntemleriyle).
+5. Pub/Sub Desteği: Gerçek zamanlı mesajlaşma sistemleri için Publish/Subscribe mimarisini destekler.
+
+ Redis Kullanım Senaryoları
+Web Uygulamalarında Önbellekleme (Caching): Sık kullanılan verileri hızlandırmak için.
+Oturum Yönetimi (Session Management): Kullanıcı oturumlarını hızlı ve güvenilir şekilde yönetmek için.
+Sıralama ve Skorlama Sistemleri: Oyunlardaki liderlik tabloları gibi senaryolar için.
+Gerçek Zamanlı Analitik: Hızlı veri işleme ve analitik raporlama için.

@@ -1,0 +1,3 @@
+AutoMapper:
+************
+AutoMapper, farklı veri nesnelerinin otomatik olarak eşleştirilerek dönüştürülmesini ve kopyalanmasını kolaylaştıran bir kütüphanedir.

@@ -1,0 +1,36 @@
+RabbitMQ 
+************
+Açık kaynaklı bir mesaj kuyruğu (message broker) sistemidir.
+Uygulamalar arasında mesaj alışverişini yöneterek asenkron iletişim sağlar.
+
+📌 RabbitMQ Nedir ve Ne İşe Yarar?
+Mesajları iletir, saklar ve dağıtır: Bir uygulama mesajı kuyruğa bırakır, başka bir uygulama bunu alır.
+Mikroservisler arasında iletişimi sağlar: Bir mikroservis başka bir mikroservise doğrudan bağlanmadan mesaj gönderebilir.
+Yük dengeleme (Load Balancing) yapar: Mesajları birden fazla tüketiciye dağıtarak iş yükünü dengeler.
+Sistemlerin bağımsız çalışmasını sağlar: Bir servis çökerse mesaj kuyruğu onu saklar, sistem tekrar çalıştığında mesaj işlenir.
+
+🔧 Nasıl Çalışır?
+RabbitMQ, AMQP (Advanced Message Queuing Protocol) protokolünü kullanır ve aşağıdaki bileşenlerle çalışır:
+
+Producer (Üretici) 📨
+Mesajları oluşturur ve kuyruk sistemine gönderir.
+
+Exchange (Değişim Noktası) 🔄
+Gelen mesajları belirli kurallara göre ilgili kuyruğa yönlendirir.
+
+Queue (Kuyruk) 📥
+Mesajları saklar ve tüketicilere iletilene kadar bekletir.
+
+Consumer (Tüketici) 📤
+Kuyruktaki mesajları alır ve işler.
+
+🚀 Nerelerde Kullanılır?
+✔ Mikroservis mimarilerinde: Servisler arası haberleşmeyi sağlamak için.
+✔ Gerçek zamanlı bildirim sistemlerinde: E-posta, SMS, Push bildirim gönderimi.
+✔ İşlem kuyruğu yönetiminde: Büyük veri işleme sistemlerinde.
+✔ IoT sistemlerinde: Sensörlerden gelen verileri yönetmek için.
+
+RabbitMQ, .NET Core, Java, Python, Node.js gibi birçok dilde kullanılabilir. 
+Docker ve Kubernetes ile ölçeklenebilir şekilde dağıtılabilir.
+
+Özetle, RabbitMQ mesajları yönetmek ve sistemler arasında güvenilir iletişim sağlamak için kullanılan bir message broker sistemidir. 🎯

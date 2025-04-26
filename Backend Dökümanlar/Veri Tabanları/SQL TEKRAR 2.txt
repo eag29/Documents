@@ -1,0 +1,37 @@
+TSQL(TRANSACTION SQL)
+
+TSQL ÖRNEK SORULAR
+
+-- int ile değişken tanımlama +
+-- Char ile değişken tanımlama +
+-- iki sayının toplamı +
+-- Üç tane sınav notu girilen öğrencinin ortalaması +
+-- Üç basamaklı sayının basamaklarının toplamı  *
+-- EN YÜKSEK MÜŞTERİ BAKİYESİNİ GETİRME  *
+-- EN FAZLA STOK SAYISINI VE EN FAZLA STOK SAYISINA SAHİP OLARAN ÜRÜNÜ GETİRME *
+-- PRİNT İLE İF ELSE SORGUSU +
+-- TABLO OLUŞTURMA VE VERİ GİRİŞİ *
+-- TABLO OLUŞTURMA, VERİ GİRİŞİ, İSMİNDE M HARFİ GEÇEN VERİ +
+-- PRİNT İLE İF ELSE SORGUSU +
+-- PRİNT İLE İF ELSE SORGUSU(STOK SAYISI 100DEN BÜYÜK MÜ KÜÇÜK MÜ) +
+-- PRİNT İLE İF ELSE SORGUSU(DIŞARIDAN GİRİLEN STOK SAYISI 100DEN BÜYÜK MÜ KÜÇÜK MÜ) *
+-- PRİNT İLE İF ELSE SORGUSU(ÜRÜN SAYISI 20DEN BÜYÜK MÜ KÜÇÜK MÜ *
+--  CASE SORGUSU İLE ÜRÜN DURUMUNU SORGULAMA *
+-- CASE SORGUSU İLE KATEGORİYİ SORGULAMA +
+-- CASE SORGUSU İLE ÜRÜN STOĞUNU SORGULAMA *
+-- WHİLE DÖNGÜSÜ İLE SAYAÇ *
+-- WHİLE DÖNGÜSÜYLE 1 İLA 10 ARASINDAKİ SAYILARI GETİR *
+-- WHİLE DÖNGÜSÜYLE 1 İLA 10 ARASINDAKİ SAYILARIN TOPLAMINI GETİR +
+-- WHİLE DÖNGÜSÜYLE TOPLAM STOK SAYISI 200'Ü GEÇENE KADAR STOK SAYISINI 1 ARTTIR *
+-- SORGUYU İSTENEN ZAMANDA GETİRME *
+-- Değişken ile Parametreli Tetikleyici Kullanımı
+-- DERS 93TEKİ ÖDEV YAPILACAK
+-- Fonksiyon oluşturma
+-- Ders 96daki ödev(stoğun karekökünün 3 ile çarpımını oluşturan fonksiyon)
+-- VARCHAR FONKSİYON
+--DECIMAL FONKSİYON
+-- TABLE FUNCTION
+-- TABLE FUNCTION(STOK SAYISI 50DEN AZ OLAN ÜRÜNLERİ GETİR)
+-- Non Clustured Index
+-- TRANSACTION  - ROLLBACK
+-- COMMIT

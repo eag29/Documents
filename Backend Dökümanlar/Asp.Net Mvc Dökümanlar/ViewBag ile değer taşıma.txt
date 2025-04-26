@@ -1,0 +1,24 @@
+  [HttpGet]
+  public ActionResult SatisYap(int id)
+  {
+      List<SelectListItem> deger1 = (from x in context.Personels.ToList()
+                                     select new SelectListItem
+                                     {
+                                         Text = x.PersonelAd + " " + x.PersonelSoyad,
+                                         Value = x.PersonelID.ToString()
+                                     }).ToList();
+      ViewBag.dgr1 = deger1;
+
+      var deger2 = context.Uruns.Find(id);
+      ViewBag.dgr2 = deger2.UrunID;
+      ViewBag.dgr3 = deger2.SatisFiyati;
+      return View();
+  }
+
+    @Html.LabelFor(x => x.Urun)
+    <input type="text" name="UrunID" value="@ViewBag.dgr2" class="form-control" readonly />
+    <br />
+
+    @Html.LabelFor(x => x.Personel)
+    @Html.DropDownListFor(x => x.Personelid, (List<SelectListItem>)ViewBag.dgr1, new { @class = "form - control" })
+    <br />

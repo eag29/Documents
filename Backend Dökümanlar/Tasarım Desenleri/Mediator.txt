@@ -1,0 +1,27 @@
+Mediator:
+***********
+ Nesneler arasındaki doğrudan bağımlılığı azaltarak
+bir aracı (mediator) üzerinden iletişim kurmalarını sağlar.
+Merkezi sistem vardır.Kalıcı bağımlılık ortadan kalkar.
+
+Neden Kullanılır?
+Nesneler arasında gevşek bağlılık (loose coupling) sağlar.
+Kodun okunabilirliğini ve bakımını kolaylaştırır çünkü nesneler doğrudan birbirleriyle iletişim kurmak yerine ortak bir aracı üzerinden haberleşir.
+Bağımlılıkları azaltır, böylece sistem daha esnek hale gelir.
+
+Mediator Kullanım Alanları
+Chat Uygulamaları (Bir kullanıcıdan diğerlerine mesaj iletmek için)
+GUI (Arayüz) Bileşenleri (Düğmeler, textbox'lar, listeler arası iletişim için)
+Oyun Geliştirme (Oyuncular veya oyun nesneleri arasındaki mesajlaşma yönetimi)
+Mikroservisler Arası Haberleşme
+
+Sonuç
+Mediator Design Pattern, nesneler arasındaki bağımlılığı azaltarak daha modüler ve yönetilebilir bir yapı sağlar. 
+Özellikle, birçok bileşenin birbiriyle haberleştiği projelerde kullanılması faydalıdır. 🚀
+
+
+
+
+
+
+

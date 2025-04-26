@@ -1,0 +1,10 @@
+Dapper:
+********
+Dapper, .NET dünyası için basit bir Mikro ORM’dir.
+Veritabanı işlemleri için herhangi bir .NET projesine eklenebilen bir NuGet kitaplığıdır.
+Oldukça hafif ve yüksek performanslıdır.
+Veritabanı erişim kodunu büyük ölçüde azaltır.
+ORM’nin tüm görevleri yerine veritabanı görevlerine odaklanır.
+Herhangi bir veritabanı ile çalışabilir. 
+SQL Server, Oracle, SQLite, MySQL, PoestgreSQL vb.
+Verilerin sık sık değiştiği ve istendiği senaryolarda iyi bir seçimdir.

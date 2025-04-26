@@ -1,0 +1,14 @@
+Mikroservis:
+***********
+Uygulamanın küçük servislere ayrılmasıdır.
+E Ticaret  - Bankacılık uygulamaları.
+Tek bir noktadan çıkıp tek bir noktaya gider.
+Özel kullanım senaryoları gerekebilir.(Bir servisin farklı bir veri tabanında tutulması. Örneğin; Sepet mikroservisinin redis veri tabanında tutulması)
+Her bir mikro serviste farklı bir veri tabanı ve tasarım deseni kullanılabilir.
+Örneğin;
+Ürün yorumları: MongoDb
+Sepet: Redis
+Arama: Elastich Search
+Domain: Her bir ekibin geliştirmesi gereken modül.
+Bir domainde hata alınması projenin bütününü etkilemez sadece o domaini etkiler.
+

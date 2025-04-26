@@ -1,0 +1,52 @@
+Mikroserviste Frontend kısmı:
+*****************************
+**// Dto Katmanı **//
+Frontends dosyası oluşturulur. İçerisine class library olarak ProjeAdiDto.Layer katmanı oluşturulur.
+Dtosu oluşturulacak mikroservisin dto dosyası oluşturulur.İçerisinde her bir varlık dtos dosyası oluşturulur.
+Varlıkların ilgili crud işlemleri için dto sınıfları oluşturulur.
+
+**// WebUI katmanı **//
+Frontends dosyası içerisinde .netCore webApi(modelController) projesi oluşturulur.
+Areas klaörü oluşturulur. İçerisinde admin klasörü oluşturulur. İçerisinde controllers dosyası oluşturulur.
+DtoLayer katmanında tanımlanan ilgili varlıklar için mvccontroller oluşturulur. IHttpClientFactory değişkeni ve ctor oluşturulur.
+Sınıfın üstünde [Area("Admin")] ve [Route("Admin/Sinif adı")] attributeleri verilir.
+Her metotun üstünde [Route("CrudişlemiSinifAdi")] atributesi verilir. 
+
+**// Index View **//
+Index viewi için oluşturulan metotta IHttpClientFactory ile bağlantı oluşturulur. 
+Ardından bağlantının oluşturulduğu değişken ile async metottan yararlanılarak bağlantı linki verilir.
+Bağlantı linkinin verildiği değişken başarılı döndürülüyor ise
+Bağlantı linkinin verildiği değişken async metot ile okunur.
+Yeni değişken oluşturulur. Okuma işleminin yapıldığı değişken deserialize edilir.
+Yeni oluşturulan değişken geriye döndürülür.
+
+**// CreateFeatureSlider **//
+İki metot oluşturulur. İlk metot [HttpGet] attributesi alır. İlkinde sadece geriye döndürme yapılır. Viewbagler verilir. Task, async almaz
+İkinci metotda IHttpClientFactory ile bağlantı oluşturulur. [HttpPost] attributesi alır. Task alır.
+Ardından Dışarıdan gelen dto parametresi serialize edilir. Şifreleme işlemi yapılır.
+bağlantının oluşturulduğu değişken ile async metottan yararlanılarak bağlantı linki verilir.
+Bağlantı linkinin verildiği değişken başarılı döndürülüyor ise
+Aksiyona geri döndürme yapılır.
+
+**// UpdateFeatureSlider(Get) **//
+Dışarıdan parametre olarak id alınır. IHttpClientFactory ile bağlantı oluşturulur. 
+Ardından bağlantının oluşturulduğu değişken ile async metottan yararlanılarak bağlantı linki verilir. Sonuna parametre idsi eklenir
+Bağlantı linki başarılı döndürülüyor ise okuma işlemi yapılır. Okuma işleminin yapıldığı değişken desiralize edilir.
+Desiralize edilen değişken geriye döndürülür.
+
+**// UpdateFeatureSlider(Post) **//
+IHttpClientFactory ile bağlantı oluşturulur. Dışarıdan gelen parametre serialize edilir. Şifreleme işlemi yapılır.
+bağlantının oluşturulduğu değişken ile async metottan yararlanılarak bağlantı linki verilir.
+Bağlantı linkinin verildiği değişken başarılı döndürülüyor ise
+Aksiyona geri döndürme yapılır.
+
+**// DeleteFeatureSlider **//
+IHttpClientFactory ile bağlantı oluşturulur. 
+Ardından bağlantının oluşturulduğu değişken ile async metottan yararlanılarak bağlantı linki verilir. Delete göre link verilir.
+Bağlantı linkinin verildiği değişken başarılı döndürülüyor ise
+Aksiyona geri döndürme yapılır.
+
+
+
+
+

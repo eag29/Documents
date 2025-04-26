@@ -1,0 +1,31 @@
+SignalR
+*********
+ASP.NET için geliştirilmiş bir real-time (gerçek zamanlı) iletişim kütüphanesidir.  
+İstemci (client) ve sunucu (server) arasında çift yönlü, asenkron ve anlık veri iletişimi sağlar.
+
+SignalR Ne İşe Yarar?
+Gerçek Zamanlı Güncellemeler: Kullanıcılar arasında anlık mesajlaşma, bildirim gönderme, canlı skor güncellemeleri, finansal veri akışı gibi senaryolar için kullanılır.
+Çift Yönlü İletişim: Sunucu, istemcilere anında veri gönderebilir ve istemciler de sunucuya anlık veri iletebilir.
+Bağlantı Yönetimi: Kullanıcıların bağlantı durumlarını yönetebilir, gruplar oluşturabilir ve belirli istemcilere özel mesajlar gönderebilir.
+
+SignalR Nasıl Çalışır?
+SignalR, istemci ile sunucu arasındaki bağlantıyı WebSocket, Server-Sent Events (SSE) veya Long Polling gibi protokollerle sağlar. 
+WebSocket destekleniyorsa, en verimli ve hızlı iletişim yöntemi olarak bunu kullanır.
+
+İstemci bağlanır
+Bağlantı kimliği (Connection ID) oluşturulur
+İstemci ile sunucu arasında sürekli bir bağlantı kurulur
+Gerçek zamanlı veri aktarımı sağlanır
+
+SignalR Kullanım Senaryoları
+Canlı Sohbet (Chat) Uygulamaları
+Gerçek Zamanlı Bildirim Sistemleri
+Canlı Veri Yayınları (Finans, Spor Skorları vb.)
+Çok Oyunculu (Multiplayer) Oyunlar
+Gerçek Zamanlı İşbirliği Araçları (Google Docs gibi)
+
+SignalR Avantajları
+✅ Gerçek Zamanlı İletişim: WebSocket gibi teknolojileri otomatik kullanır.
+✅ Kolay Kullanım: ASP.NET Core ile kolayca entegre edilebilir.
+✅ Ölçeklenebilirlik: Redis ile dağıtılmış SignalR kullanımı mümkündür.
+✅ Otomatik Bağlantı Yönetimi: Bağlantı koptuğunda otomatik olarak tekrar bağlanabilir.

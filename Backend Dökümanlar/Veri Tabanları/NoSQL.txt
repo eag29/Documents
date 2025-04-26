@@ -1,0 +1,7 @@
+NoSQL:
+*******
+NoSQL, İlişkili veritabanı sistemleri ile arasındaki en büyük fark ilişkisel veritabanı sistemlerinde veriler tablo ve sütunlar ile ilişkili bir şekilde tutulurken NoSQL’de json bir yapıda tutulmasıdır.
+NoSQL sistemlerin avantajlarına değinmek gerekirse ilk olarak performans gösterilebilir. 
+Okuma ve yazma işlemleri ilişkisel veritabanlarına göre çok daha hızlı olmaktadır. 
+NoSQL sistemler yatay olarak genişletilebilirler. 
+Binlerce sunucu bir arada çalışarak inanılmaz derecedeki veriler üzerinde işlemler yapabilir.

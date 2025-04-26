@@ -1,0 +1,2 @@
+Senkron Programlama: Aynı anda tek işlemin yapılmasıdır.
+Asenkron Programlama: Aynı anda birden çok işlemin yapılmasıdır.

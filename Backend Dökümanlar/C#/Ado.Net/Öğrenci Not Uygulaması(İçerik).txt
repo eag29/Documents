@@ -1,0 +1,25 @@
+Öğrenci Not Uygulaması
+***********************
+İçerik:
+Öğrenci ve öğretmen giriş paneli ve kayıt ol paneli yapılacak.
+Not giriş sayfası yapılacak.(Idsi girili öğrencinini not bilgilerini getirecek. Sadece öğretmen görüntüleyebilecek.)
+Not düzenleme sayfası yapılacak.(Sadece öğretmen görüntüleyebilecek.)
+Not görüntüleme sayfası yapılacak.(Sadece öğrenci görüntüleyebilecek.)
+------------
+Metotlar:
+Kullanıcı giriş +
+Kayıt Olma +
+Listele +
+Datagridviewe veri getirme +
+Datagridviewden araçlara veri getirme +
+Ekle +
+Güncelle +
+Sil +
+Temizle +
+------------
+Tablolar:
+Öğretmen(OgrtID, Ad, Soyad, KullaniciAdi, Sifre) +
+Öğrenci(OgrID, AdSoyad, KullaniciAdi, Sifre) +
+Not(NotID, Not1, Not2, Not3, Ort, Ogr) +
+
+

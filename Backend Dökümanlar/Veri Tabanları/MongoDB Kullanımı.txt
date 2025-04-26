@@ -1,0 +1,191 @@
+MongoDB Kullanımı:
+********************
+Bu metin code first yaklaşımı ile MongoDB kullanarak geliştirilen bir masaüstü projesinin adımlarını içermektedir.
+
+1. Adım:
+İlk olarak ilgili mongoDB paketleri kurulur.
+
+2. Adım:
+Oluşturulacak tablolar entites dosyası içerisinde class olarak oluşturulur.
+
+3. Adım:
+Services dosyası içerisinde mongoDb bağlantısının, veri tabanı ve tablo adının verileceği class oluşturulur
+IMongoDatabase _database;
+
+ctor
+{
+var client = new MongoClient("mongodb://localjost:27017");
+_database = client.getDatabase("VeriTabaniAdi");
+}
+
+public IMongoCollection<BsonDocument> GetOrdersCollection()
+{
+return _database.getCollection<BsonDocument>("Orders");
+}
+
+4. Adım:
+Services dosyası içerisinde crud işlemleri için entitesAdiOperation classı oluşturulur.
+
+/*/*/* Listeleme Methodu /*/*/*
+
+        public List<Product> GetAllProductList()
+        {
+            var connection = new MongoDbConnection(); // MongoDB'ye bağlantı sağlanılır.
+            var ProductCollection = connection.GetProductsCollection(); // "Products" koleksiyonuna erişilir.
+
+            var documents =  ProductCollection.Find(new BsonDocument()).ToList();
+            // Find(new BsonDocument()): Tüm dokümanları (verileri) getirir.
+
+            List<Product> products = new List<Product>();
+
+            foreach (var doc in documents)
+            {
+                var product = new Product()
+                {
+                    ProductName = doc["ProductName"].AsString,
+                    ProductPrice = doc["ProductPrice"].AsInt32,
+                    ProductStock = doc["ProductStock"].AsInt32,
+                    ProductStatus = doc["ProductStatus"].AsBoolean
+                };
+                products.Add(product);
+            }
+
+            return products;
+        }
+
+ /*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*
+
+/*/*/*/*/*/ ID'ye göre getirme methodu /*/*/*/*/*/
+
+public Order GetOrderById(string orderId)
+{
+var connection = new MongoDbConnection();
+var entitesAdiCollection = connection.GetOrdersCollection();
+
+var filter = Builders<BsonDocument>.Filter.Eq("OrderID",ObjectId.Parse(orderID));
+var result = orderCollection.Find(filter).FirstOrDefault();
+if(result!=null)
+{
+return new Order
+{
+City = result["City"].ToString();
+}
+}
+else
+{
+return null;
+}
+
+ /*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*
+
+/*/*/*/*/*/*/* Ekleme methodu /*/*/*/*/*/*/*/*
+
+        public void AddProduct(Product product)
+        {
+            var connection = new MongoDbConnection();
+            var productCollection = connection.GetProductsCollection();
+
+            var document = new BsonDocument
+           {
+               {"ProductName", product.ProductName },
+               {"ProductPrice", product.ProductPrice },
+               {"ProductStock", product.ProductStock },
+               {"ProductStatus", product.ProductStatus }
+           };
+
+            productCollection.InsertOne(document);
+        }
+
+ /*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*
+
+/*/*/*/*/*/*/*/ Güncelleme Methodu /*/*/*/*/*/*/*/*
+
+public void Güncelleme Methodu(Order order)
+{
+var connection = new MongoDbConnection();
+var entitesAdiCollection = connection.GetOrdersCollection();
+var filter = Builders<BsonDocument>.Filter.Eq("OrderID",ObjectId.Parse(orderID));
+var updatedValue = Builders<BsonDocument>.update.Set("CustomerName",order.CustomerName);
+orderCollection.updateOne(filter,updateValue);
+}
+
+ /*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*
+
+ /*/*/*/*/*/*/*/* Silme Methodu  /*/*/*/*/*/*/*/*
+
+public void Silme Methodu(string orderID)
+{
+var connection = new MongoDbConnection();
+var entitesAdiCollection = connection.GetOrdersCollection();
+var filter = Builders<BsonDocument>.Filter.Eq("OrderID", ObjectId.Parse(orderID));
+orderCollection.deleteOne(filter);
+}
+
+/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*
+
+5. Adım:
+Form ekranı üzerinden oluşturulan crud metotları çağrılır.
+
+EntitesOperation EntitesOperation = new EntitesOperation();
+
+/*/*/* Listeleme Methodu /*/*/*
+
+Listeleme Methodu()
+{
+List<Order> orders = EntitesOperation.ListelemeMethodu();
+datagridView.dataSource = orders;
+}
+
+/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*
+
+/*/*/*/*/*/ ID'ye göre getirme methodu /*/*/*/*/*/
+
+Idye göre getir Methodu()
+{
+string orderId = txtid.text;
+Order orders = orderOperation.GetOrderById(id);
+datagridView.dataSource = new List<Order> {orders};
+}
+
+/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*
+
+/*/*/*/*/*/*/* Ekleme methodu /*/*/*/*/*/*/*/*
+
+Ekleme methodu()
+{
+var entitesAdi = new entitesAdi 
+{
+degisken = txt.text;
+};
+
+EntitesOperation.eklememethodu(degisken);
+
+}
+
+/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*
+
+/*/*/*/*/*/*/*/ Güncelleme Methodu /*/*/*/*/*/*/*/*
+
+Güncelleme Methodu()
+{
+string orderId = txtid.text;
+
+var updateOrder= new Order
+{
+degisken = txt.text;
+};
+orderOperation.UpdateOrder(updateOrder);
+}
+
+/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*
+
+ /*/*/*/*/*/*/*/* Silme Methodu  /*/*/*/*/*/*/*/*
+
+Silme Methodu()
+{
+string orderId = txtid.text;
+orderoperation.DeleteOrder(orderId);
+}
+
+
+/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*

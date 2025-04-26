@@ -1,0 +1,45 @@
+Mvc: Böl, Parçala, Yönet mottosuyla geliştirme olanağı sağlar.
+3 temel başlıktan oluşur; Model, View, Controller
+
+Models: Veri tabanı tablolarının tutulduğu kısımdır. 
+View: Frontend(tasarım kısmının) tutulduğu yerdir.
+Controllers: Backend kısmının tutulduğu yerdir.
+Repositories: Crud işlemlerinde gerçekleşen tekrarların minimize edildiği yerdir.
+Content: Hazır temaların bulunduğu kısımdır.
+
+İlk olarak Controllers kısmında oluşturulan sınıftan 
+Action Result türünde method oluşturulur.
+Sayfa içerisinde birden fazla bölüm oluşturulacaksa PartialViewResult methodu oluşturulur.
+PartialViewResult Index içerisinden @Html.Action("ViewAdi) ile çağrılır.(Dinamik ise)
+PartialViewResult Index içerisinden @Html.Partial("ViewAdi) ile çağrılır.(Statik ise)
+Methodun adının üstünde sağ tık ile view eklenir. 
+View Shared kısmından projede kullanılacak olan layout.html seçimi yapılır.
+Seçilen html içerisinde @Renderbody() çağrılır.
+Oluşturulan view içerisinden proje çalıştırılır.
+
+layout.html dosyası içerisine Content klasörü içerisinden bootstrap.min.css klasörü
+sürekle bırak yapılarak css kullanımı sağlanır.
+
+
+Models içerisine Entity dosyası oluşturulur ve içerisine ADO.NET eklenir.
+Controller kısmından sağ tık yapılarak yeni controller sınıfı eklenir.
+controller sınıfı içerisinde proje adıyla Models.Entity kütüphanesi çağrılır.
+
+Index.html içerisinde en üst kısma da kütüphane çağrılır.
+Altına model ile kullanılacak tablo liste şeklinde çağrılır.
+Değişiklik yapılacak kısımda foreach döngüsü ile Model getirilir.
+@tanımlananDegisken ile tablodaki değişkenler çağrılır.
+
+HttpGet(Sayfa yüklendiği zaman çalışır)
+
+HttPost(Buttona tıklandığı zaman çalışır)
+
+
+Repositories dosyası oluşturulur.
+Listeleme, ekleleme, silme ve güncelleme oluşturulur.
+Her tablo için ayrı sınıf oluşturulur referans olarak repositories sınıfı ve tablo adı verilir.
+
+hosting indirim kodu:
+4VY3Q0H3AZ
+Hosting: Sunucu adı
+Domain: Alan adı

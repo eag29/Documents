@@ -1,0 +1,27 @@
+Redis ile Mikroservis kullanımı:
+****************************
+Yeni mikroservisin adı dosya olarak oluşturulur. Dosyanın içerisinde wep api projesi oluşturulur. Redis ve JwtBarear paketleri yükle
+IdentityServerUrl appsettings jsona eklenir. launchSettings'de fazla link silinir.
+Dtos dosyası oluşturulur. İlgili dtos ve properties oluşturulur.
+
+appsettings.jsonda "Redis Settings" kümesi açılır "Host" ve "Port" değerleri verilir verilir.
+Settings dosyası oluşturulur. İçerisine RedisSettings sınıfı oluşturulur. Host(string) ve Port(int) properties verilir.
+RedisService sınıfı oluşturulur. Host ve port properties tanımlanır.Ctor verilir. 
+ConnectionMultiplexer oluşturulur. Bağlantısı oluşturulur. Veri tabanı alınır.
+
+Services dosyası oluşturulur. Interface oluşturulur. listeleme,kaydetme ve silme metotları oluşturulur.
+Service sınıfı oluşturulur. Interface'i implemet edilir. İmplement edilen metotlar Redis service değişkeni ile doldurulur. Ctor verilir.
+
+**//  Giriş Yapan Kullanıcının Sub Değerini Alma  **//
+LoginServices dosyası oluşturulur. ILoginService oluşturulur. İçerisine GetUserId propu verilir. Sadece get ile.
+LoginService oluşturulur. ILoginService referans verilir ve implement edilir. IHttpContextAccessor değişkeni ve ctor verilir.
+
+**//  Controller  **//
+Controller dosyası ve içerisinde apiController sınıfı oluşturulur. IBasketService ve ILoginService değişkenleri ctor verilir.
+Listeleme, kaydetme ve silme için apiler yazılır.
+
+**// IdentityServer Config ve  Program.css eklemeleri  **//
+IdentityServer Config sınıfında ve basket mikroservisinde Program.css üzerinden ilgili eklemeler yapılır.
+Controllerda listelemenin yapıldığı yerde Sisteme girmiş olan tokena ait girilmiş bilgileri verildiği kod yazılır.
+Postmanda body www-forma gelinir. client_id,client_secret,grant_type=password,username ve password değerleri girilir.
+Gelen token alınır. api ile getirilir.

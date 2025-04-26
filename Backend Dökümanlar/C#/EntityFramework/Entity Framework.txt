@@ -1,0 +1,24 @@
+ Entity Framework nedir ?
+***********************
+Entity Framework (EF), Microsoft tarafından geliştirilen ve .NET platformu üzerinde kullanılan bir Object-Relational Mapping (ORM) teknolojisidir. 
+Entity Framework, veritabanı ile nesne yönelimli programlama dünyası arasında köprü kurar. 
+Yani veritabanındaki tabloları, C# sınıfları (entity class) olarak kullanmamıza olanak sağlar.
+
+🔧 Entity Framework Ne İşe Yarar?
+Veritabanı işlemlerini kolaylaştırır: SQL sorguları yazmak yerine, C# diliyle nesneler üzerinde işlem yaparız. EF bu işlemleri otomatik olarak SQL'e çevirir.
+Zamandan tasarruf sağlar: CRUD (Create, Read, Update, Delete) işlemleri daha hızlı yazılır.
+Bakımı kolay kodlar üretmemizi sağlar.
+Veritabanına bağımlılığı azaltır: Kod odaklı çalışma sayesinde farklı veritabanlarına geçiş kolaylaşır.
+
+🎯 Kullanım Yaklaşımları
+Entity Framework'ün üç farklı kullanım yaklaşımı vardır:
+
+Yaklaşım	Açıklama
+Code First	Sınıfları (entity'leri) yazarız, EF buna göre veritabanını oluşturur.
+Database First	Mevcut bir veritabanı üzerinden modeller otomatik olarak oluşturulur.
+Model First	Görsel bir tasarım ile veri modeli oluşturulur, sonra bu modele göre veritabanı yaratılır.
+
+Dip Not: Virtual nedir ? 
+Bir özelliğin veya metodun türetilmiş sınıflar tarafından geçersiz kılınabilmesini sağlar bu özellik genellikle entity framework ile ilişkili sınıflarda özellikle lazy loading(tembel yükleme) özelliğini etkinleştirmek için kullanılır.
+Lazy loading(tembel yükleme) ise ilişkili verilerin yalnızca erişildiğinde veritabanından yüklenmesidir. 
+Gereksiz veri çekilmeyip yalnızca ihtiyaç duyulan verilerin yüklenmesini sağlar buda performansın artmasını neden olur fakat çok sayıda ilişkili veri içeren veri setlerinde çok fazla sorgu yapılmasına neden olabilir bu da performans sorunlarını yol açabilir.

@@ -1,0 +1,42 @@
+Onion Architecture:
+******************
+Katmanlı mimarinin bir evrimi olarak düşünülebilir.
+Özellikle bağımlılıkların doğru yönetilmesini, bağımsız iş mantığının oluşturulmasını 
+test edilebilirliği ön plana çıkarır.
+/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*
+Onion Architecture Katmanları
+Onion Architecture, içten dışa doğru büyüyen halkalar (onion - soğan) gibi bir yapıya sahiptir.
+Genellikle 4 ana katmandan oluşur:
+
+1. Domain Layer (Core) → Çekirdek Katman
+En içteki katmandır.
+Tamamen bağımsızdır ve hiçbir dış bağımlılığı içermez.
+Temel iş kuralları (business rules) ve entity’ler (domain entities) burada tanımlanır.
+Service (Domain Service), Aggregates, Value Objects gibi modelleri barındırır.
+
+2. Application Layer → Uygulama Katmanı
+İş mantığını yönetir ve dış dünyaya açılan hizmetleri sağlar.
+Use Case’ler (Application Services) burada bulunur.
+Domain Layer ile dış dünyayı bağlayan ara katmandır.
+Interfaces (Repository, Services) burada tanımlanır ama implementasyonları burada olmaz.
+
+3. Infrastructure Layer → Altyapı Katmanı
+Veritabanı erişimi, üçüncü parti kütüphaneler, dosya sistemi, API çağrıları gibi dış sistemlerle entegrasyonu sağlar.
+Application Layer’daki interface’leri uygular (Repository, Data Access gibi).
+ORM araçları (EF Core, Dapper vb.), Logging, Authentication, Email gönderme gibi işlemler buradadır.
+
+4. Presentation Layer → Sunum Katmanı
+UI, API, Konsol Uygulaması, Web Servisleri gibi dış katmanları içerir.
+Kullanıcıdan gelen istekleri alır, Application Layer’a yönlendirir ve sonuçları döndürür.
+MVC, Blazor, Angular, React gibi teknolojiler burada kullanılır.
+
+Onion Architecture Kullanmanın Avantajları
+✅ Bağımsız İş Mantığı: İş mantığı, herhangi bir UI veya veri kaynağından bağımsızdır.
+✅ Bağımlılıklar Kontrol Altında: Dış bağımlılıklar içe doğru akmaz.
+✅ Test Edilebilirlik: İç katmanlar bağımsız olduğu için kolayca test edilebilir.
+✅ Geliştirilebilirlik ve Ölçeklenebilirlik: Büyük projelerde kolay yönetilebilir yapı sunar.
+
+Onion Architecture, bağımlılıkları merkezden dışa yönlendirerek iş mantığını bağımsız kılan bir mimari modeldir. 
+Özellikle büyük ve karmaşık projelerde test edilebilirliği artırır ve geliştirmeyi kolaylaştırır. 
+Ancak, küçük projeler için fazla karmaşık olabilir. 
+.NET Core ile gelişmiş uygulamalar geliştirmek isteyenler için ideal bir mimaridir. 🚀

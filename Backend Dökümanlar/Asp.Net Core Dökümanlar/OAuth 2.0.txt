@@ -1,0 +1,40 @@
+OAuth 2.0:
+************
+OAuth 2.0, internet üzerinde güvenli yetkilendirme sağlamak için kullanılan bir yetkilendirme protokolüdür. 
+Kullanıcı adı ve şifre paylaşmadan, üçüncü taraf uygulamaların belirli kaynaklara erişmesine izin vermek için kullanılır.
+
+OAuth 2.0 Nasıl Çalışır?
+OAuth 2.0, istemcinin (uygulamanın) kullanıcının kimlik bilgilerini doğrudan bilmesine gerek kalmadan yetkilendirme almasını sağlar.
+Bunun için Access Token (Erişim Belirteci) kullanılır.
+
+1. Kullanıcı Girişi
+
+Kullanıcı, bir uygulamanın (istemci) belirli bir kaynağa erişmesini ister.
+Uygulama, kullanıcının kimlik sağlayıcısına yönlendirilmesini sağlar.
+
+2. Yetkilendirme
+
+Kullanıcı, kimlik sağlayıcı (örneğin Google, Facebook, GitHub) üzerinden giriş yapar ve uygulamaya belirli izinler verir.
+Yetkilendirme sunucusu, istemciye bir Yetkilendirme Kodu (Authorization Code) döner.
+
+3. Erişim Belirteci (Access Token) Alma
+
+İstemci, yetkilendirme kodunu kullanarak kimlik sağlayıcısından Access Token talep eder.
+Kimlik sağlayıcı, Access Token vererek istemcinin belirli kaynaklara erişmesini sağlar.
+
+4. Kaynaklara Erişim
+
+İstemci, Access Token’ı kullanarak belirlenen API'lere veya verilere erişebilir.
+
+
+OAuth 2.0 Bileşenleri
+Resource Owner (Kaynak Sahibi): Kullanıcıdır, verileri veya hesabı üzerinde yetkilendirme yapar.
+Client (İstemci): Kullanıcının verilerine erişmek isteyen üçüncü taraf uygulamadır.
+Authorization Server (Yetkilendirme Sunucusu): Kullanıcıyı doğrulayan ve Access Token üreten sunucudur.
+Resource Server (Kaynak Sunucusu): Kullanıcının verilerini barındıran ve Access Token ile erişim sağlayan sistemdir.
+
+OAuth 2.0 Kullanım Alanları
+Sosyal Giriş (Social Login): "Google ile Giriş Yap", "Facebook ile Giriş Yap"
+API Erişimi: GitHub API, Google Drive API gibi hizmetlere üçüncü taraf uygulamalarla erişim sağlamak.
+Mikroservisler Arası Yetkilendirme: Servisler arası güvenli iletişim sağlamak.
+OAuth 2.0, genellikle OpenID Connect (OIDC) ile birlikte kullanılarak kimlik doğrulama (authentication) sürecini de destekler.

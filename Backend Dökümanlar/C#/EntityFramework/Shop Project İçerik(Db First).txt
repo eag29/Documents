@@ -1,0 +1,37 @@
+Eklenecek Kısımlar
+********************
+
+Eklenecek Tablolar:
+Customer Table +
+CustomerID +
+CustomerName +
+CustomerCountry +
+CustomerCity +
+
+Order Table 
+OrderID +
+CustomerId +
+ProductId(Product Tablosuna OrderId eklenilecek) +
+Count(int) +
+Unity Price(decimal) +
+Total Price(decimal) +
+------------------
+Eklenilecek İstatistikler:
+Kategori sayısı +
+Ürün sayısı +
+Müşteri sayısı +
+Sipariş sayısı +
+Toplam Stok Sayısı +
+Ortlama ürün fiyatı +
+Toplam 'ÜrünAdı' Stoğu +
+'Ürün Adı' Toplam Fiyatı +
+Stok Sayısı 50'den az olan ürünler + 
+Kategorisi 'KategoriAdı' olan ürünlerin stok sayısı(Alt sorgu ile yazılacak) +
+Ülkesi Türkiye olan müşterilerin toplam sipariş sayısı(hem sql ile hem ef ile getirilecek) +
+'Kategori Adı' olan ürünlerin toplam kazancı(hem sql ile hem ef ile getirilecek) +
+Son eklenen ürünün adı +
+Son eklenen ürün kategorisi +
+Aktif Ürün Sayısı +
+Toplam Redmi Note 10 Kazanç Tutarı +
+Son siparişi veren müşterinin Adı +
+Ülke Çeşitliliği Sayısı +

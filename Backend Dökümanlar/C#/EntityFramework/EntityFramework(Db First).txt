@@ -1,0 +1,86 @@
+İlk olarak ilgili sınıfın içerisinde ADO.NET Entity Data Model eklenir. 
+Veri çekilecelek formun classına tanımlanır. 
+DbEntityUrunEntities1 db = new DbEntityUrunEntities1();
+
+Listeleme İşlemi
+/*
+Tüm Değerleri Listeleme
+dataGridView1.DataSource = db.TBLKATEGORI.ToList();
+*/
+
+/*Sadece İstenen Değerleri Listeleme
+dataGridView1.DataSource = (from x in db.TBLURUN
+select new
+{
+x.URUNID,
+ x.URUNAD,
+x.URUNMARKA,
+x.STOK,
+x.FIYAT,
+x.TBLKATEGORI.AD,
+ x.DURUM
+}).ToList();
+*/
+
+Comboxda veri getirme
+/*
+var kategoriler = (from x in db.TBLKATEGORI
+select new
+{
+ x.ID,
+ x.AD
+}
+).ToList();
+comboBox1.ValueMember = "ID";
+comboBox1.DisplayMember = "AD";
+comboBox1.DataSource = kategoriler;
+*/
+
+Ekleme İşlemi
+/*
+TBLKATEGORI ta = new TBLKATEGORI();
+ta.AD = textBox2.Text;
+db.TBLKATEGORI.Add(ta);
+db.SaveChanges();
+MessageBox.Show("Kategori Eklendi ");
+*/
+
+Silme İşlemi
+/*
+int id = Convert.ToInt32(textBox1.Text);
+var kategori = db.TBLKATEGORI.Find(id);
+db.TBLKATEGORI.Remove(kategori);
+db.SaveChanges();
+MessageBox.Show("Kategori Silinmiştir ");
+*/
+
+Güncelleme işlemi
+/*
+int id = Convert.ToInt32(textBox1.Text);
+var ktgr = db.TBLKATEGORI.Find(id);
+ktgr.AD = textBox2.Text;
+db.SaveChanges();
+*/
+
+Arama işlemi
+/*
+var values = db.TblProduct(x=>x.ProductName==txtProductName.text).toList();
+dataGridView1.DataSource = values;
+*/
+
+Birleştirme işlemi
+/*
+var values = db.TblProduct.Join
+(db.TblCategory,
+product=>product.CategoryId,
+category=>category.CategoryId,
+product, category) => new
+{
+ProductId = product.ProductId,
+ProductName = product.ProducName
+}).ToList();
+dataGridView1.DataSource = values;
+*/
+
+
+

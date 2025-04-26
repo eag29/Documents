@@ -1,0 +1,44 @@
+N-Tier Architecture (N Katmanlı Mimari), yazılım uygulamalarını birden fazla katmana (tier) ayırarak geliştirme, 
+bakım, güvenlik ve ölçeklenebilirlik avantajları sunan bir mimari yaklaşımdır. 
+"N", katman sayısını ifade eder ve bu katmanlar genellikle farklı sorumluluklara sahiptir. 
+En yaygın olanı 3 katmanlı mimaridir (3-Tier Architecture), ancak ihtiyaçlara göre daha fazla katman eklenebilir.
+
+🚀 Temel Katmanlar:
+
+1.🛠️ Entity Layer (Veri Katmanı) (Opsiyonel)
+Verilerin fiziksel olarak saklandığı katmandır.
+Örnek: MSSQL, PostgreSQL, MySQL.
+
+2. 💾 Data Access Layer (Veri Erişim Katmanı)
+Veritabanına erişim, veri alma, güncelleme, ekleme ve silme işlemlerinin yapıldığı katmandır.
+Örnek: Entity Framework (EF Core), Dapper veya Hibernate kullanımı.
+
+3. ⚙️ Business Logic Layer (İş Katmanı)
+Uygulamanın iş kuralları ve mantığı burada bulunur.
+Kullanıcı girişlerini işler, veriyi analiz eder ve iş süreçlerini yönetir.
+Örnek: C#, Java veya Kotlin ile yazılmış iş mantığı.
+
+4. 🎨 Presentation Layer (Sunum Katmanı)
+Kullanıcıların uygulamayla etkileşime geçtiği katmandır.
+UI (User Interface) ve UX (User Experience) burada önemlidir.
+Örnek: Web uygulamaları için HTML, CSS, JavaScript veya mobil uygulamalar için Android, iOS arayüzleri.
+
+Neden Kullanılır? (Avantajları)
+✅ Kolay Geliştirme ve Bakım: Katmanlar birbirinden bağımsız olduğu için bakım ve geliştirme daha kolaydır.
+✅ Yeniden Kullanılabilirlik: Katmanlar farklı projelerde kullanılabilir.
+✅ Güvenlik: Katmanlar arasında erişim kontrolü kolaylıkla uygulanabilir.
+✅ Ölçeklenebilirlik: İhtiyaç duyulan katmanlar ayrı sunucularda çalıştırılarak yük dağıtılabilir.
+
+⚠️ Dezavantajları:
+🔴 Performans Kaybı: Katmanlar arası iletişim gecikmelere yol açabilir.
+🔴 Artan Karmaşıklık: Basit projeler için gereksiz bir karmaşıklık yaratabilir.
+
+🧩 Gerçek Hayat Örneği:
+Bir e-ticaret uygulamasında:
+
+Veri Katmanı: Kullanıcı bilgileri, sipariş geçmişi, ürün detaylarının veritabanında saklanması.
+İş Katmanı: Sipariş verme, ödeme işlemleri, indirim hesaplamaları.
+Sunum Katmanı: Ürünleri listeleyen mobil/web arayüz.
+
+🎯 Sonuç:
+N Katmanlı Mimari, özellikle büyük ve ölçeklenebilir projelerde düzenli, güvenli ve sürdürülebilir kod yapılarını destekleyen güçlü bir yaklaşımdır. 👨‍💻🛠️

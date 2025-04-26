@@ -1,0 +1,13 @@
+if (Request.Files.Count > 0)
+{
+    string dosyaAdi = Path.GetFileName(Request.Files[0].FileName);
+    string uzanti = Path.GetExtension(Request.Files[0].FileName);
+    string yol = "~/Image/" + dosyaAdi + uzanti;
+    Request.Files[0].SaveAs(Server.MapPath(yol));
+    personel.PersonelGorsel = "/Image/" + dosyaAdi + uzanti;
+}
+Görsel eklenecek ve güncellenecek sayfaya
+@using (Html.BeginForm("PersonelEkle", "Personel", FormMethod.Post, new { enctype = "multipart/form-data" }))
+
+Görsel verisinin çekildiği başlığın altına
+<input type="file" name="PersonelGorsel" />

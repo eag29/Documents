@@ -1,0 +1,35 @@
+Google Cloud Storage 
+**************************
+Nesne tabanlı bir bulut depolama hizmetidir.
+Büyük ölçekli verileri güvenli bir şekilde saklamak, yönetmek ve dünya genelinde erişilebilir hale getirmek için kullanılır.
+
+Google Cloud Storage Özellikleri:
+1.Nesne Tabanlı Depolama
+- Dosyalar "bucket" adı verilen konteynerlerde saklanır.
+- Klasik dosya sistemlerinden farklı olarak, nesneler metadata (üstbilgi) ile yönetilir.
+
+2.Çeşitli Depolama Sınıfları
+- Standard Storage: Sık erişilen veriler için düşük gecikmeli, yüksek performanslı depolama.
+- Nearline Storage: Aylık birkaç kez erişilen veriler için düşük maliyetli seçenek.
+- Coldline Storage: Yıllık birkaç kez erişilen veriler için daha da düşük maliyetli depolama.
+- Archive Storage: Nadir erişilen veriler için en düşük maliyetli depolama.
+
+3.Otomatik Yedekleme ve Güvenlik
+- Veriler, Google’ın global veri merkezlerinde yedeklenir.
+- IAM (Identity and Access Management) ile erişim kontrolü sağlanır.
+- Varsayılan olarak veriler şifrelenir.
+
+4.Kolay Entegrasyon
+- BigQuery, AI/ML, Kubernetes Engine (GKE), Dataflow gibi diğer GCP hizmetleriyle uyumludur.
+- RESTful API, SDK’lar (Python, Java, C# vb.) ile programlanabilir.
+
+5.Versiyonlama ve Lifecycle Yönetimi
+- Eski dosyaları saklamak veya otomatik silmek için kurallar tanımlanabilir.
+- Örneğin, 30 gün boyunca erişilmeyen dosyaları otomatik olarak düşük maliyetli bir depolama sınıfına taşımak mümkündür.
+
+Google Cloud Storage Kullanım Alanları:
+✅ Yedekleme ve Arşivleme – Şirketlerin kritik verilerini uzun süreli saklaması.
+✅ Medya İçerik Depolama – YouTube gibi video platformlarının büyük medya dosyalarını barındırması.
+✅ Makine Öğrenmesi ve Büyük Veri Analizi – Büyük veri kümelerinin işlenmesi ve analiz edilmesi.
+✅ Web Sitesi Barındırma – Statik web sitelerini barındırma ve içeriği CDN ile hızlı sunma.
+✅ Veri Transferi ve Paylaşımı – Büyük boyutlu verilerin ekipler veya müşteriler arasında paylaşılması.

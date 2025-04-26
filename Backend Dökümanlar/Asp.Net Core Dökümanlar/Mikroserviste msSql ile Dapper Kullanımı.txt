@@ -1,0 +1,23 @@
+Mikroserviste msSql ile Dapper Kullanımı
+***********************************
+İlk olarak entityCore ve dapper paketleri yüklenir.
+Entites dosyası oluşturulur.
+/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/
+Context dosyası oluşturulur. 
+DapperContext sınıfı oluşturulur. DbContext'ten referans alır.
+IConfiguration ve string olarak _connectionString değişkeni oluşturulur.
+configuration değişkeni ctor olarak verilir.
+onConfiguring methodu oluşturulur. Bağlantı yolu verilir.
+Oluşturulan entities verilir.
+Dapper kullanarak SQL Server'a bağlantı açmak için IDbConnection ile bağlantı oluşturulur.
+appsettings üzerinde Connection strings oluşturularak bağlantı yolu verilir.
+/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/
+Services dosyası oluşturuldu.
+IDiscountService interface oluşturulur. Crud methodları verilir.
+DiscountService sınıfı oluşturuldu. Referans olarak IDiscountService verilir.
+DapperContext değişkeni oluşturuldu ctor verilir.
+Ado.NET yapısı implement edilen metotlar doldurulur.
+/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/
+Api controller oluşturuldu. IDiscountService oluşturuldu. Ctor oluşturuldu.
+/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/
+Program.css üzerinden dappercontext ve Idiscount service  transient olarak eklenir.
